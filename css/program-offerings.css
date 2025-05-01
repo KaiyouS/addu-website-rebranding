@@ -1,0 +1,597 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: #121212; */
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  /* margin: 40px; */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+li a i {
+  margin-left: 5px;
+}
+
+ul li a {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+#clusters-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+header {
+  background-color: rgb(0, 0, 50);
+  padding: 0px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* color: #2C318F; */
+  color: white;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.header-v2 {
+  background: linear-gradient(180deg, rgba(0, 0, 50, 0.85) 0%, rgba(0, 0, 50, 0) 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  color: #ffffff;
+  font-size: 32px;
+  transition: all 0.3s ease;
+}
+
+.header-container {
+  height: 70px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  transition: all 0.3s ease;
+}
+
+.header-container-v2 {
+  height: 120px;
+  transition: all 0.3s ease;
+}
+
+.header-logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo-text {
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.header-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #d9d9d900;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  /* flex: 1 1 200px; */
+  background-image: url('../assets/logos/UniversitySeal.png');
+  transition: all 0.3s ease;
+}
+
+.header-logo-v2 {
+  height: 75px;
+  width: 75px;
+  transition: all 0.3s ease;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navigation li {
+  margin-left: 25px;
+}
+
+.navigation li:first-child {
+  margin-left: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  font-weight: 600; 
+  position: relative; 
+  padding: 5px 0; 
+}
+
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px; 
+  background-color: currentColor; 
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease; 
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navigation a:not(:hover)::after {
+  transform-origin: right; 
+}
+.jumbotron {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: 
+    /* linear-gradient(to top, rgb(0, 0, 75, 0.85), rgb(0, 0, 75, 0.75)), */
+    /* linear-gradient(0deg, rgba(12, 35, 64, 1) 0%, rgba(12, 35, 64, 1) 5%, rgba(0, 16, 46, 0.6) 100%), */
+    linear-gradient(0deg, rgb(2, 2, 56) 0%, rgba(2, 2, 56, 1) 5%, rgba(0, 16, 46, 0.6) 100%),
+    url(../img/program-offerings.png) no-repeat center center;
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
+.jumbotron .jumbotron-inner{
+  width: 70%;
+}
+
+.jumbotron .jumbotron-inner h1{
+  font-family: 'EB Garamond', serif;
+  font-size: 84px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: rgba(255, 255, 255);
+  text-underline-offset: 10px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.jumbotron .jumbotron-inner p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.jumbotron .jumbotron-inner .jumbotron-btn{
+  display: flex;
+  justify-content: center
+}
+
+.jumbotron .jumbotron-inner .jumbotron-btn a{
+  display: flex;
+  justify-content: center
+}
+
+.jumbotron .jumbotron-inner .jumbotron-btn .btn-one{
+  padding: 8px 14px;
+  border-radius: 5px;
+  background: #fff;
+  color: #353535;
+  margin-bottom: 150px;
+}
+
+.jumbotron .jumbotron-inner .jumbotron-btn .btn-two{
+  padding: 8px 14px;
+  border-radius: 5px;
+  background: rgb(223, 91, 4);
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #555;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.school-wrapper {
+  width: 100%;
+}
+
+.school-header-container {
+  text-align: center;
+  padding: 40px 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.divider-line {
+  border-top: 2px solid #000000;
+  margin: 0 auto 100px auto;
+  width: 100%;
+  /* max-width: 1320px; */
+}
+
+.school-prefix {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 10px 0;
+}
+
+.school-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0 0 30px 0;
+  line-height: 1.1;
+}
+
+.school-description {
+  font-size: 20px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.6;
+  width: 100%;
+  /* max-width: 1280px; */
+  margin: 0 auto;
+}
+
+.cluster-card-wrapper {
+  margin-top: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 4px 16px 5px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cluster-card-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 6px 20px 7px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.cluster-card {
+  display: flex;
+  align-items: flex-start;
+  color: white;
+  background: linear-gradient(to right, #8b0000, #00008b);
+  border-radius: 20px;
+  /* width: 1320px; */
+  width: 100%;
+  height: 100%;
+  padding: 28px 40px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #d9d9d900;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  margin: auto 0;
+}
+
+.content {
+  /* border: 2px solid red; */
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.content h2 {
+  /* border: 2px solid red; */
+  font-size: 28px;
+  margin: 0px 0 10px 0;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+.content p {
+  /* border: 2px solid red; */
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.programs {
+  background-color: white;
+  padding: 0px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.3s ease, padding 0.5s;
+}
+
+.programs.show {
+  opacity: 1;
+  max-height: 1000px;
+  padding: 50px;
+}
+
+.programs ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.programs li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 920px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  ul li a {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 620px;
+  }  
+  
+  .school-header-container {
+    margin: 75px 0 0 0;
+    padding: 0;
+  }
+  
+  .divider-line {
+    display: none;
+  }
+  
+  .school-prefix {
+    font-size: 16px;
+  }
+  
+  .school-title {
+    font-size: 50px;
+    font-weight: 700;
+    vertical-align: bottom;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .school-description {
+    display: none;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .cluster-card {
+    display: flex;
+    align-items: center;
+  }
+  
+  .content h2 {
+    font-size: 44px;
+  }
+  
+  .content p {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  ul li a {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .school-title, .content h2 {
+    font-size: 32px;
+  }
+  
+  .programs.show {
+    padding: 25px;
+}
+}
+
+@media (max-width: 575px) {  
+  ul li a {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .school-title {
+    font-size: 28px;
+  }
+  
+  .cluster-card-wrapper {
+    border-radius: 10px;
+  }
+  
+  .cluster-card {
+    padding: 15px 15px;
+    border-radius: 10px;
+  }
+  
+  .logo {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .content {
+    margin-left: 15px;
+  }
+  
+  .content h2 {
+    font-size: 24px;
+  }
+}
+
+
+.footer {
+  /* background-color: #1c1c1c; */
+  background-color: rgb(0, 0, 75);
+  color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  
+  margin-top: 100px;
+}
+
+.footer-container {
+  width: 1110px;
+}
+
+.footer-logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+}
+
+.footer-logo-text {
+  font-family: 'EB Garamond', serif;
+  font-size: 22px;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 25px;
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #d9d9d900;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  /* flex: 1 1 200px; */
+  background-image: url('../assets/logos/UniversitySealWhite.png');
+}
+
+.footer-links {
+  display: flex;
+  justify-content: right;
+  /* align-items: center; */
+  gap: 40px;
+  flex: 3 1 600px;
+  flex-wrap: wrap;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  gap: 10px;
+  min-width: 180px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2.5;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ffffff;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #ffffff;
+}

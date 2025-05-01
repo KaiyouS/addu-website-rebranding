@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Undergraduate Programs</title>
+        <!-- <link rel="stylesheet" href="vendor/boostrap/css/bootstrap.min.css" /> -->
+        <link rel="stylesheet" href="css/program-offerings.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon"/>
+    </head>
+
+    <body>
+        <header class="header header-v2" id="header">
+            <div class="header-container header-container-v2" id="header-container">
+                <div class="header-logo-container">
+                    <div class="header-logo header-logo-v2" id="header-logo"></div>
+                    <div class="header-logo-text">ATENEO DE DAVAO UNIVERSITY</div>
+                </div>
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Offerings</a></li>
+                        <li><a href="#">Alumni</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- <div style="position: fixed; top: 0; bottom: 0; left: 50%; width: 1px; background-color: black; transform: translateX(-50%); z-index: -1;"></div> -->
+        <div class="jumbotron">
+            <div class="jumbotron-inner">
+                <h1>Academic Programs</h1>
+                <p>Ateneo de Davao University provides a wide array of undergraduate programs across its main academic units: the School of Arts and Sciences, the School of Business and Governance, the School of Engineering and Architecture, the School of Education, and the School of Nursing. The university also supports students preparing for further studies and careers in fields like medicine and law. On the postgraduate level, Ateneo de Davao offers numerous graduate programs, featuring Master's degrees across diverse disciplines and doctoral degrees such as the Doctor of Philosophy (in fields like Clinical Psychology and Development Studies), Doctor of Business Administration, Doctor of Public Administration, and Doctor of Education Administration.</p>
+                <div class="jumbotron-btn">
+                    <a href="#" class="btn-one">ENROLL NOW</a>
+                    <!-- <a href="#" class="btn-two">Download</a> -->
+                </div>
+            </div>
+        </div> 
+        
+        <div class="container">
+            <div id="clusters-container"></div>
+        </div>
+        
+        <button id="scrollToTopBtn" class="scroll-to-top">
+            <i class="fas fa-angle-up"></i>
+        </button>
+        
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-logo-container">
+                        <div class="footer-logo"></div>
+                        <div class="footer-logo-text">ATENEO DE DAVAO</div>
+                    </div>
+                    <div class="footer-links">
+                      <div>
+                        <a href="#">Academics</a>
+                        <a href="#">Finances</a>
+                        <a href="#">Getting Help</a>
+                        <a href="#">Registration & Course Selection</a>
+                      </div>
+                      <div>
+                        <a href="#">Communities</a>
+                        <a href="#">New Student Resources</a>
+                        <a href="#">Life at AdDU</a>
+                        <a href="#">Residential Colleges</a>
+                      </div>
+                      <div>
+                        <a href="#">Events</a>
+                        <a href="#">Get to Know AdDU</a>
+                        <a href="#">Policies & Procedures</a>
+                      </div>
+                    </div>
+                  </div>
+                
+                    <div class="footer-bottom">
+                      Copyright © 2025 Roque & Serra. All Rights Reserved
+                    </div>
+                  </div>
+            </div>
+          </footer>
+          
+        
+        <script>
+                fetch("data.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    let index = 0;
+                    const container = document.getElementById("clusters-container");
+            
+                    data.schools.forEach((school) => {
+                        // Create a wrapper for each school
+                        let schoolWrapper = `
+                        <div class="school-wrapper">
+                            <div class="school-header-container">
+                                <div class="divider-line"></div>
+                                <p class="school-prefix">School of</p>
+                                <h1 class="school-title">${school.name}</h1>
+                                <p class="school-description">${school.description}</p>
+                            </div>
+                            <div class="clusters-container">
+                        `;
+                        if (index === 0) {
+                            schoolWrapper = schoolWrapper.replace('<div class="divider-line"></div>', '<div class="divider-line" style="display: none;"></div>');
+                        }
+                        school.clusters.forEach((cluster) => {
+                            const clusterCard = `
+                                <div class="cluster-card-wrapper">
+                                    <div class="cluster-card" onclick="togglePrograms(${index})" style="background: ${cluster.gradient}">
+                                        <div class="logo" style="background-image: url('${cluster.logo}');"></div>
+                                        <div class="content">
+                                            <h2>${cluster.name}</h2>
+                                            <p>${cluster.description}</p>
+                                        </div>
+                                    </div>
+                                    <div class="programs" id="programs-${index}">
+                                        <ul>
+                                            ${cluster.programs.map((p) => `<li><a href="${p.url}" target="_blank">${p.name} <i class="fas fa-external-link-alt"></i></a></li>`).join("")}
+                                        </ul>
+                                    </div>
+                                </div>
+                            `;
+                            schoolWrapper += clusterCard;
+                            index++;
+                        });
+            
+                        // Close the clusters container and school wrapper
+                        schoolWrapper += `
+                            </div>
+                        </div>
+                        `;
+            
+                        container.innerHTML += schoolWrapper;
+                    });
+                })
+                .catch((error) => console.error("Error loading JSON:", error));
+
+                function togglePrograms(index) {
+                    const programDiv = document.getElementById(`programs-${index}`);
+                    const icon = programDiv.previousElementSibling.querySelector(".fa");
+                
+                    if (programDiv) {
+                        programDiv.classList.toggle("show");
+                
+                        // Change the icon based on the visibility of the programDiv
+                        if (programDiv.classList.contains("show")) {
+                            icon.classList.remove("fa-angle-double-down");
+                            icon.classList.add("fa-angle-double-up");
+                        } else {
+                            icon.classList.remove("fa-angle-double-up");
+                            icon.classList.add("fa-angle-double-down");
+                        }
+                    }
+                }
+                
+                const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+                
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 800) {
+                        scrollToTopBtn.classList.add("show");
+                    } else {
+                        scrollToTopBtn.classList.remove("show");
+                    }
+                });
+                
+                const header = document.getElementById("header");
+                const headerContainer = document.getElementById("header-container");
+                const headerLogo = document.getElementById("header-logo");
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 800) {
+                        header.classList.remove("header-v2");
+                        headerContainer.classList.remove("header-container-v2");
+                        headerLogo.classList.remove("header-logo-v2");
+                    } else {
+                        header.classList.add("header-v2");
+                        headerContainer.classList.add("header-container-v2");
+                        headerLogo.classList.add("header-logo-v2");
+                    }
+                });
+                
+                scrollToTopBtn.addEventListener("click", () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                });
+        </script>
+    </body>
+</html>
