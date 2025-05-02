@@ -1,10 +1,11 @@
 
 header {
-    background-color: rgb(0, 0, 50);
+    /* background-color: rgb(0, 0, 50); */
+    background-color: #ffffff;
     padding: 0px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* color: #2C318F; */
-    color: white;
+    color: #2C318F;
+    /* color: white; */
     position: fixed;
     top: 0;
     z-index: 1000;

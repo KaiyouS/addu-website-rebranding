@@ -1,51 +1,148 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Poppins, sans-serif;
     line-height: 1.6;
-    color: #000022;
+    color: #333333;
     background-color: #ffffff;
     margin: 0;
     padding: 0;
   }
   
-  .container {
-    max-width: 900px;
+  li {
+    line-height: 2.5;
+  }
+  
+  li ul {
+    margin-bottom: 5px;
+  }
+  
+  li ul li {
+    line-height: 2;
+    list-style-type: '-';
+    margin-left: -15px;
+    text-indent: 5px;
+  }
+  
+
+  .contact-page-container {
+    display: flex;
+    max-width: 90%; /* Or your desired max width */
     margin: 40px auto;
     padding: 0 20px;
+    gap: 40px; /* Adjust spacing between columns */
   }
   
-  h1 {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #001f4d;
+  .contact-form-column {
+    flex: 1; /* Adjust flex-basis or width as needed */
+    /* Add padding or other styles for the form column */
   }
   
-  h2 {
-    font-size: 1.4em;
+  .contact-info-column {
+    flex: 1; /* Adjust flex-basis or width as needed */
+  }
+  
+  /* Optional: Style the form elements */
+  .contact-form-column h2 {
+    font-size: 28px;
     font-weight: bold;
-    color: #001f4d;
+    color: #2C318F;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+  }
+  
+  .form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+  }
+  
+  /* Reuse existing button style or define a new one */
+  .contact-form-column .btn-one {
+      /* Add styles if needed, or ensure .btn-one is globally defined */
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #2C318F; /* Example color */
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+  }
+  
+  .contact-form-column .btn-one:hover {
+      background-color: #1a206d; /* Darker shade on hover */
+  }
+  
+  
+  /* Adjustments for the moved contact-info-column */
+  .contact-info-column {
+    /* Remove margin: 40px auto; as it's now handled by contact-page-container */
+    margin: 0;
+    /* Keep padding: 0 20px; or adjust as needed within the column */
+    padding: 0;
+    max-width: none; /* Remove max-width if it conflicts with column layout */
+  }
+  
+  
+  .contact-info-column {
+    max-width: 1320px;
+    /* margin: 40px auto;
+    padding: 0 20px; */
+  }
+  
+  .contact-info-column h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2C318F;
+  }
+  
+  .contact-info-column h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2C318F;
     margin-top: 30px;
   }
   
-  .note {
+  .contact-info-column .note {
     font-size: 0.95em;
     color: #333333;
   }
   
-  a {
+  .contact-info-column a {
     color: #0033cc;
     text-decoration: none;
   }
   
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  ul {
+  .contact-info-column ul {
     list-style-type: disc;
-    padding-left: 20px;
+    padding-left: 50px;
   }
   
-  em {
+  .contact-info-column em {
     font-style: italic;
   }
   
+  .contact-info-column h2 a {
+    text-decoration: underline;
+    text-decoration-thickness: 4px;
+    color: #2C318F;;
+  }
