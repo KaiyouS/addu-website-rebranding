@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* background-color: #121212; */
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    /* margin: 40px; */
+  }  
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a:visited {
+    color: inherit;
+  }
+  
+.jumbotron {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: 
+      /* linear-gradient(to top, rgb(0, 0, 75, 0.85), rgb(0, 0, 75, 0.75)), */
+      /* linear-gradient(0deg, rgba(12, 35, 64, 1) 0%, rgba(12, 35, 64, 1) 5%, rgba(0, 16, 46, 0.6) 100%), */
+      linear-gradient(0deg, rgb(2, 2, 56) 0%, rgba(2, 2, 56, 1) 5%, rgba(0, 16, 46, 0.6) 100%),
+      url(../img/program-offerings.png) no-repeat center center;
+    background-size: cover;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    margin-bottom: 100px;
+  }
+  
+  .jumbotron .jumbotron-inner{
+    width: 70%;
+  }
+  
+  .jumbotron .jumbotron-inner h1{
+    font-family: 'EB Garamond', serif;
+    font-size: 84px;
+    /* text-decoration: underline; */
+    text-decoration-thickness: 3px;
+    text-decoration-color: rgba(255, 255, 255);
+    text-underline-offset: 10px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+  
+  .jumbotron .jumbotron-inner p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 2;
+    margin-bottom: 16px;
+    display: none;
+  }
+  
+  .jumbotron .jumbotron-inner .jumbotron-btn{
+    display: flex;
+    justify-content: center
+  }
+  
+  .jumbotron .jumbotron-inner .jumbotron-btn a{
+    display: flex;
+    justify-content: center
+  }
+  
+  .jumbotron .jumbotron-inner .jumbotron-btn .btn-one{
+    padding: 8px 14px;
+    border-radius: 5px;
+    background: #fff;
+    color: #353535;
+    margin-bottom: 150px;
+  }
+  
+  .jumbotron .jumbotron-inner .jumbotron-btn .btn-two{
+    padding: 8px 14px;
+    border-radius: 5px;
+    background: rgb(223, 91, 4);
+    color: #fff;
+  }
