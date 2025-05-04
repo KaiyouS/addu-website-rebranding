@@ -1,10 +1,10 @@
 
-header {
+.header {
     /* background-color: rgb(0, 0, 50); */
     background-color: #ffffff;
     padding: 0px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #2C318F;
+    color: #2d3091;
     /* color: white; */
     position: fixed;
     top: 0;
@@ -120,3 +120,139 @@ header {
   .navigation a:not(:hover)::after {
     transform-origin: right; 
   }
+  
+
+ #___gcse_0 {
+    line-height: 1.5;
+  }
+  
+  .gs-title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  
+
+#search-overlay h1 {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  font-size: 52px;
+  font-weight: 100px;
+  color:white;
+  cursor: pointer;
+}
+
+#search-overlay {
+  position: fixed;
+  bottom: -100vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 50);
+  z-index: 10000;
+  transition: bottom 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 80px;
+}
+
+
+#search-overlay.active {
+  bottom: 0;
+}
+
+body.overlay-active {
+  overflow: hidden;
+}
+
+#search-overlay .search-logo-container {
+  top: 20px;          
+  left: 20px;         
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+#search-overlay .search-logo {
+  background-image: url(../assets/logos/UniversitySealWhite.png);
+  width: 125px;
+  height: 125px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#search-overlay .search-logo-text {
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: #ffffff
+}
+
+#search-overlay .search-logo-text {
+  font-family: 'EB Garamond', serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: #ffffff
+}
+
+.custom-search-bar {
+  width: 800px;
+}
+.gsc-input {
+  width: 800px;
+}
+
+
+#search-overlay .custom-search-bar .gsc-control-cse {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 800px;
+}
+
+
+#search-overlay .custom-search-bar .gsc-search-box-tools .gsc-search-box {
+  border: 1px solid #dfe1e5;
+  background-color: white;
+  border-radius: 30px;
+  padding: 15px 25px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#search-overlay .custom-search-bar input.gsc-input {
+  border: none;
+  background: none;
+  box-shadow: none;
+  outline: none;
+  padding: 8px 0;
+  margin: 0;
+  color: #333333;
+  flex-grow: 1;
+  font-size: 18px;
+  width: 100%;
+  min-width: 0;
+}
+
+
+#search-overlay .custom-search-bar button.gsc-search-button {
+  border: none;
+  background: none;
+  padding: 0 10px;
+  margin: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+#search-overlay .custom-search-bar button.gsc-search-button svg {
+  fill: #4285F4;
+  width: 24px;
+  height: 24px;
+  display: block;
+}

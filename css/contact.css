@@ -25,22 +25,20 @@ body {
 
   .contact-page-container {
     display: flex;
-    max-width: 90%; /* Or your desired max width */
+    max-width: 90%;
     margin: 40px auto;
     padding: 0 20px;
-    gap: 40px; /* Adjust spacing between columns */
+    gap: 40px;
   }
   
   .contact-form-column {
-    flex: 1; /* Adjust flex-basis or width as needed */
-    /* Add padding or other styles for the form column */
+    flex: 1;
   }
   
   .contact-info-column {
-    flex: 1; /* Adjust flex-basis or width as needed */
+    flex: 1;
   }
   
-  /* Optional: Style the form elements */
   .contact-form-column h2 {
     font-size: 28px;
     font-weight: bold;
@@ -66,19 +64,17 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    box-sizing: border-box;
   }
   
   .form-group textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical;
   }
   
-  /* Reuse existing button style or define a new one */
   .contact-form-column .btn-one {
-      /* Add styles if needed, or ensure .btn-one is globally defined */
       display: inline-block;
       padding: 10px 20px;
-      background-color: #2C318F; /* Example color */
+      background-color: #2C318F;
       color: #fff;
       border: none;
       border-radius: 4px;
@@ -89,17 +85,13 @@ body {
   }
   
   .contact-form-column .btn-one:hover {
-      background-color: #1a206d; /* Darker shade on hover */
+      background-color: #1a206d;
   }
   
   
-  /* Adjustments for the moved contact-info-column */
   .contact-info-column {
-    /* Remove margin: 40px auto; as it's now handled by contact-page-container */
     margin: 0;
-    /* Keep padding: 0 20px; or adjust as needed within the column */
     padding: 0;
-    max-width: none; /* Remove max-width if it conflicts with column layout */
   }
   
   

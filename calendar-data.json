@@ -1,0 +1,587 @@
+{
+  "academicYears": [
+    {
+      "start": 2024,
+      "end": 2025,
+      "terms": [
+        {
+          "name": "First Semester",
+          "events": [
+            {
+              "dateRange": { "start": "2024-07-22", "end": "2024-07-23" },
+              "label": "Ateneo First Year Onboarding Program (SEA and SAS)"
+            },
+            {
+              "dateRange": { "start": "2024-07-25", "end": "2024-07-26" },
+              "label": "Ateneo First Year Onboarding Program (SOE, SON, and SBG)"
+            },
+            {
+              "date": "2024-07-27",
+              "label": "Dugong Bughaw Bloodletting Day"
+            },
+            {
+              "date": "2024-07-29",
+              "label": "Guidance Orientation and Learning Session for College Faculty (CWTC PAGKALINGA Program)"
+            },
+            {
+              "dateRange": { "start": "2024-07-29", "end": "2024-08-05" },
+              "label": "Enrollment"
+            },
+            {
+              "date": "2024-07-30",
+              "label": "St. Ignatius Mass"
+            },
+            {
+              "date": "2024-07-31",
+              "label": "Solemnity of St. Ignatius of Loyola (University Holiday)"
+            },
+            {
+              "date": "2024-08-03",
+              "label": "Scholars' General Assembly and Orientation"
+            },
+            {
+              "date": "2024-08-03",
+              "label": "UCEAC Medical Mission"
+            },
+            {
+              "date": "2024-08-05",
+              "label": "Beginning of the 1st Semester"
+            },
+            {
+              "dateRange": { "start": "2024-08-05", "end": "2024-08-06" },
+              "label": "Higher Education Convocation"
+            },
+            {
+              "date": "2024-08-07",
+              "label": "School/Cluster Orientation for SOE, SON and SAS",
+              "description": "AM - School of Education (SOE)<br>AM - School of Nursing (SON)<br>PM - School of Arts and Sciences (SAS)"
+            },
+            {
+              "date": "2024-08-08",
+              "label": "School/Cluster Orientation for SBG and SEA",
+              "description": "AM - School of Business and Governance (SBG)<br>PM - School of Engineering and Architecture (SEA)"
+            },
+            {
+              "date": "2024-08-09",
+              "label": "International Day of the World's Indigenous Peoples"
+            },
+            {
+              "date": "2024-08-14",
+              "label": "College Fiesta - Mass of the Assumption"
+            },
+            {
+              "date": "2024-08-15",
+              "label": "Solemnity of the Assumption of Our Lady (University Holiday)"
+            },
+            {
+              "date": "2024-08-16",
+              "label": "Education General Assembly"
+            },
+            {
+              "date": "2024-08-17",
+              "label": "First Year Late Enrollees/Transferees/Returnees Orientation"
+            },
+            {
+              "date": "2024-08-20",
+              "label": "Mass of the Holy Spirit"
+            },
+            {
+              "date": "2024-08-21",
+              "label": "Ninoy Aquino Day (Non-working Holiday)"
+            },
+            {
+              "date": "2024-08-22",
+              "label": "University Convocation and Strategic Conversations"
+            },
+            {
+              "date": "2024-08-23",
+              "label": "Research Dissemination"
+            },
+            {
+              "date": "2024-08-24",
+              "label": "SON General Assembly and Student Orientation"
+            },
+            {
+              "date": "2024-08-26",
+              "label": "National Heroes' Day (Special Non-working Holiday)"
+            },
+            {
+              "date": "2024-09-04",
+              "label": "5G's Learning Session for Scholars"
+            },
+            {
+              "date": "2024-09-06",
+              "label": "International Students Orientation Program"
+            },
+            {
+              "date": "2024-09-08",
+              "label": "Feast of the Nativity of the BVM"
+            },
+            {
+              "dateRange": { "start": "2024-09-09", "end": "2024-09-14" },
+              "label": "Preliminary Exams"
+            },
+            {
+              "date": "2024-09-15",
+              "label": "International Coastal Clean Up Day"
+            },
+            {
+              "dateRange": { "start": "2024-09-16", "end": "2024-09-21" },
+              "label": "INDEX 2024 Batch 14 for Non-Teaching Personnel"
+            },
+            {
+              "date": "2024-09-21",
+              "label": "International Day of Peace/Martial Law"
+            },
+            {
+              "date": "2024-09-26",
+              "label": "Deadline of Prelim Grades"
+            },
+            {
+              "dateRange": { "start": "2024-09-26", "end": "2024-09-28" },
+              "label": "Intramurals"
+            },
+            {
+              "date": "2024-09-28",
+              "label": "Special Institutional Convocation for University Traditional Awards"
+            },
+            {
+              "date": "2024-10-02",
+              "label": "Launching of the Month of the Holy Rosary"
+            },
+            {
+              "dateRange": { "start": "2024-10-03", "end": "2024-10-31" },
+              "label": "Birhen sa Barangay"
+            },
+            {
+              "date": "2024-10-04",
+              "label": "SoE Teachers' Day Celebration"
+            },
+            {
+              "date": "2024-10-05",
+              "label": "SoN Capping and Candlelight Ceremony"
+            },
+            {
+              "date": "2024-10-05",
+              "label": "SoN Capping and Candlelight Ceremonies"
+            },
+            {
+              "date": "2024-10-05",
+              "label": "World Teachers' Day"
+            },
+            {
+              "date": "2024-10-06",
+              "label": "ASF Social Love Sunday"
+            },
+            {
+              "date": "2024-10-13",
+              "label": "ASF Social Love Sunday"
+            },
+            {
+              "date": "2024-10-20",
+              "label": "ASF Social Love Sunday"
+            },
+            {
+              "dateRange": { "start": "2024-10-07", "end": "2024-10-11" },
+              "label": "Marian Exhibit"
+            },
+            {
+              "dateRange": { "start": "2024-10-07", "end": "2024-10-12" },
+              "label": "National Mental Health Week"
+            },
+            {
+              "date": "2024-10-09",
+              "label": "3rd Mental Health Festival"
+            },
+            {
+              "dateRange": { "start": "2024-10-21", "end": "2024-10-26" },
+              "label": "Midterm Exams"
+            },
+            {
+              "date": "2024-11-01",
+              "label": "All Saints' Day"
+            },
+            {
+              "date": "2024-11-02",
+              "label": "All Souls' Day"
+            },
+            {
+              "date": "2024-11-05",
+              "label": "Mass for Our Dear Departed"
+            },
+            {
+              "dateRange": { "start": "2024-11-11", "end": "2024-11-15" },
+              "label": "Theology Week '24 and 20th year Anniversary of the Daily Bread Program"
+            },
+            {
+              "dateRange": { "start": "2024-11-11", "end": "2024-11-16" },
+              "label": "INDEX 2024 Batch 15 for Faculty"
+            },
+            {
+              "date": "2024-11-13",
+              "label": "Substance Use Prevention Strategies (SUPS) Learning Session"
+            },
+            {
+              "date": "2024-11-13",
+              "label": "GAWAD: Gabi ng Parangal"
+            },
+            {
+              "date": "2024-11-15",
+              "label": "University Lecture on Research"
+            },
+            {
+              "date": "2024-11-16",
+              "label": "Advance PE Departmental Exams for Saturday Classes"
+            },
+            {
+              "date": "2024-11-23",
+              "label": "Blue Knight Leadership Conference"
+            },
+            {
+              "date": "2024-11-23",
+              "label": "PE Day"
+            },
+            {
+              "date": "2024-11-25",
+              "label": "International Day for the Elimination of Violence Against Women"
+            },
+            {
+              "dateRange": { "start": "2024-11-25", "end": "2024-11-29" },
+              "label": "PE Departmental Written Exam"
+            },
+            {
+              "dateRange": { "start": "2024-11-25", "end": "2024-11-29" },
+              "label": "First Year Program Fair"
+            },
+            {
+              "date": "2024-11-29",
+              "label": "Paskuhan"
+            },
+            {
+              "dateRange": { "start": "2024-11-28", "end": "2024-12-04" },
+              "label": "Mindanao Week of Peace"
+            },
+            {
+              "date": "2024-11-30",
+              "label": "Bonifacio Day (Regular Holiday)"
+            },
+            {
+              "date": "2024-12-01",
+              "label": "World AIDS Day"
+            },
+            {
+              "date": "2024-12-01",
+              "label": "Advent Prayer and Reflection"
+            },
+            {
+              "dateRange": { "start": "2024-12-02", "end": "2024-12-07" },
+              "label": "Final Exams"
+            },
+            {
+              "date": "2024-12-05",
+              "label": "International Volunteer Day"
+            },
+            {
+              "date": "2024-12-07",
+              "label": "Dugong Bughaw Bloodletting Day"
+            },
+            {
+              "date": "2024-12-07",
+              "label": "NSTP 2 Graduation and Commissioning Ceremony"
+            },
+            {
+              "date": "2024-12-08",
+              "label": "Solemnity of the Immaculate Conception (Special Non-working Holiday)"
+            },
+            {
+              "date": "2024-12-09",
+              "label": "Mass for the Solemnity of the Immaculate Conception"
+            },
+            {
+              "date": "2024-12-09",
+              "label": "International Anti-Corruption Day"
+            },
+            {
+              "date": "2024-12-09",
+              "label": "Start of Semestral Break"
+            },
+            {
+              "date": "2024-12-10",
+              "label": "International Human Rights Day"
+            },
+            {
+              "date": "2024-12-13",
+              "label": "University Christmas Celebration"
+            },
+            {
+              "date": "2024-12-14",
+              "label": "Deadline of Final Grades"
+            },
+            {
+              "dateRange": { "start": "2024-12-16", "end": "2024-12-24" },
+              "label": "Simbang Gabi"
+            },
+            {
+              "date": "2024-12-24",
+              "label": "Special Holiday"
+            },
+            {
+              "date": "2024-12-25",
+              "label": "Christmas Day (Regular Holiday)"
+            },
+            {
+              "date": "2024-12-30",
+              "label": "Rizal Day (Regular Holiday)"
+            },
+            {
+              "date": "2024-12-31",
+              "label": "Special Holiday"
+            },
+            {
+              "date": "2025-01-01",
+              "label": "New Year's Day (Regular Holiday)"
+            }
+          ]
+        },
+        {
+          "name": "Second Semester",
+          "events": [
+            {
+              "dateRange": { "start": "2025-01-03", "end": "2025-01-13" },
+              "label": "Enrollment"
+            },
+            {
+              "date": "2025-01-13",
+              "label": "Beginning of the 2nd Semester"
+            },
+            {
+              "date": "2025-01-25",
+              "label": "Orientation for the New Students"
+            },
+            {
+              "date": "2025-01-29",
+              "label": "Chinese New Year (Special Non-working Holiday)"
+            },
+            {
+              "date": "2025-02-05",
+              "label": "Fr. Arrupe Day"
+            },
+            {
+              "dateRange": { "start": "2025-02-05", "end": "2025-02-28" },
+              "label": "Arrupe Month"
+            },
+            {
+              "date": "2025-02-10",
+              "label": "Annual Theological Conversation"
+            },
+            {
+              "dateRange": { "start": "2025-02-17", "end": "2025-02-22" },
+              "label": "Preliminary Exams"
+            },
+            {
+              "date": "2025-02-19",
+              "label": "Reading of Honors"
+            },
+            {
+              "date": "2025-02-25",
+              "label": "People Power Anniversary (Special Non-Working Holiday)"
+            },
+            {
+              "date": "2025-03-01",
+              "label": "Araw ng Dabaw (Special Non-working Holiday)"
+            },
+            {
+              "dateRange": { "start": "2025-03-01", "end": "2025-03-02" },
+              "label": "SoN Day"
+            },
+            {
+              "date": "2025-03-05",
+              "label": "Ash Wednesday"
+            },
+            {
+              "date": "2025-03-06",
+              "label": "Deadline of Prelim Grades"
+            },
+            {
+              "date": "2025-03-08",
+              "label": "International Women's Day"
+            },
+            {
+              "dateRange": { "start": "2025-03-10", "end": "2025-03-15" },
+              "label": "Festival of Excellence"
+            },
+            {
+              "date": "2025-03-12",
+              "label": "Lenten Prayer and Reflection"
+            },
+            {
+              "dateRange": { "start": "2025-03-17", "end": "2025-03-22" },
+              "label": "SBG Week 2025"
+            },
+            {
+              "date": "2025-03-22",
+              "label": "World Water Day"
+            },
+            {
+              "date": "2025-03-30",
+              "label": "ASF Social Love Sunday"
+            },
+            {
+              "dateRange": { "start": "2025-03-30", "end": "2025-03-31" },
+              "label": "*Eid al-Fitr (Regular Holiday) (*date may vary*)"
+            },
+            {
+              "dateRange": { "start": "2025-03-31", "end": "2025-04-05" },
+              "label": "Midterm Exams"
+            },
+            {
+              "date": "2025-04-06",
+              "label": "ASF Social Love Sunday"
+            },
+            {
+              "date": "2025-04-10",
+              "label": "ASF Social Love Sunday"
+            },
+            {
+              "date": "2025-04-20",
+              "label": "ASF Social Love Sunday"
+            },
+            {
+              "date": "2025-04-09",
+              "label": "Araw ng Kagitingan (Regular Holiday)"
+            },
+            {
+              "dateRange": { "start": "2025-04-11", "end": "2025-04-12" },
+              "label": "SEA Fair"
+            },
+            {
+              "date": "2025-04-16",
+              "label": "Deadline of Midterm Grades"
+            },
+            {
+              "date": "2025-04-17",
+              "label": "Holy Thursday (Regular Holiday)"
+            },
+            {
+              "date": "2025-04-18",
+              "label": "Good Friday (Regular Holiday)"
+            },
+            {
+              "date": "2025-04-19",
+              "label": "Black Saturday (Special Non-working Day)"
+            },
+            {
+              "dateRange": { "start": "2025-04-21", "end": "2025-04-25" },
+              "label": "SoE Week"
+            },
+            {
+              "dateRange": { "start": "2025-04-25", "end": "2025-04-26" },
+              "label": "Job Fair"
+            },
+            {
+              "date": "2025-05-01",
+              "label": "Labor Day (Regular Holiday)"
+            },
+            {
+              "date": "2025-05-03",
+              "label": "PE Day"
+            },
+            {
+              "dateRange": { "start": "2025-05-05", "end": "2025-05-10" },
+              "label": "PE Departmental Written Exams"
+            },
+            {
+              "date": "2025-05-10",
+              "label": "Pabuos: eS-LP Recognition Ceremony"
+            },
+            {
+              "dateRange": { "start": "2025-05-11", "end": "2025-05-12" },
+              "label": "Blue Vote Election Monitoring"
+            },
+            {
+              "dateRange": { "start": "2025-05-12", "end": "2025-05-17" },
+              "label": "Final Exams"
+            },
+            {
+              "date": "2025-05-17",
+              "label": "NSTP 2 Graduation and Commissioning Ceremony"
+            },
+            {
+              "date": "2025-05-17",
+              "label": "Seniors' Integration Program Commissioning Rites"
+            },
+            {
+              "date": "2025-05-18",
+              "label": "Start of Semestral Break"
+            },
+            {
+              "dateRange": { "start": "2025-05-19", "end": "2025-05-26" },
+              "label": "Laudato Si Week"
+            },
+            {
+              "date": "2025-05-23",
+              "label": "Deadline of Final Grades"
+            },
+            {
+              "dateRange": { "start": "2025-05-26", "end": "2025-05-31" },
+              "label": "INDEX 2025 Batch 16 for Non-Teaching Personnel"
+            },
+            {
+              "date": "2025-05-30",
+              "label": "Service Awards"
+            },
+            {
+              "date": "2025-06-20",
+              "label": "Baccalaureate Mass"
+            },
+            {
+              "date": "2025-06-21",
+              "label": "Graduation Day for College"
+            },
+            {
+              "date": "2025-06-21",
+              "label": "SoN Ring Hop Ceremony"
+            }
+          ]
+        },
+        {
+          "name": "Summer 2025",
+          "events": [
+            {
+              "date": "2025-06-05",
+              "label": "World Environment Day"
+            },
+            {
+              "dateRange": { "start": "2025-06-06", "end": "2025-06-07" },
+              "label": "*Eid al-Adha, Feast of Sacrifice (Regular Holiday)"
+            },
+            {
+              "date": "2025-06-09",
+              "label": "Beginning of Summer classes"
+            },
+            {
+              "date": "2025-06-12",
+              "label": "Independence Day (Regular Holiday)"
+            },
+            {
+              "dateRange": { "start": "2025-06-23", "end": "2025-06-30" },
+              "label": "8-day Seniors Retreat"
+            },
+            {
+              "date": "2025-07-20",
+              "label": "Summer Break"
+            },
+            {
+              "dateRange": { "start": "2025-07-21", "end": "2025-07-28" },
+              "label": "Ateneo Student Exposure Program (ASEP) 2024"
+            },
+            {
+              "date": "2025-07-25",
+              "label": "Deadline of Grades (Summer)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

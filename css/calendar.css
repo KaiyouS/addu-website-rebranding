@@ -1,0 +1,149 @@
+.calendar-container {
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+    padding-bottom: 5rem;
+}
+
+.calendar-header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.calendar-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 50px;
+    font-weight: 500;
+    color: #2C318F;
+    
+
+    line-height: 1.3125;
+    margin: 15px 0 0;
+}
+
+.calendar-accordion-item {    
+    box-shadow: 0 1px 0 hsla(0, 0%, 85%, .5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-accordion-header {
+    align-items: flex-start;
+    border-top: 2px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    transition: border .25s, box-shadow .25s;
+    will-change: border, box-shadow;
+}
+
+.calendar-accordion-labels {
+    display: flex;
+    width: 90%;
+}
+
+.calendar-accordion-date {
+    width: 47%;
+    /* margin-right: 20px; */
+    font-size: 1.2rem;
+    letter-spacing: .0625rem;
+    line-height: 1.71429;
+    display: inline-block;
+    font-family: mallory, sans-serif;
+    text-transform: uppercase;
+    color: #6f6f6f;
+    transition: color .25s;
+}
+
+.calendar-accordion-label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+    color: rgb(0, 0, 50);
+    /* flex-grow: 1; */
+    line-height: 1.33333;
+    width: 70%;
+    margin-top: -4px;
+    padding: 0 20px 0 0;
+}
+
+time {
+    display: inline;
+}
+
+
+.calendar-accordion-content {
+    width: 63%;
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #333333;
+    align-self: flex-end;
+    padding: 0;
+    transition: height .75s;
+    will-change: height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.calendar-accordion-content-inner .is-open {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.calendar-accordion-content-inner {
+    transition: transform .5s, opacity .5s, visibility .5s;
+    will-change: transform, opacity, visibility;
+}
+
+.calendar-accordion-content p {
+    margin: 0 0 20px;
+}
+
+.calendar-accordion-trigger {
+    color: #286dc0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    width: 10%;
+    margin: 7px 0 0;
+    padding: 0;
+    text-transform: none;
+}
+
+.calendar-accordion-trigger-label {
+    box-shadow: 0 1px 0 transparent;
+    transition: box-shadow .25s;
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+
+.icon.icon-chevron-down {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.calendar-accordion-trigger .trigger-label-less {
+    display: none;
+}
+.calendar-accordion-item.is-open .calendar-accordion-trigger .trigger-label-more {
+    display: none;
+}
+.calendar-accordion-item.is-open .calendar-accordion-trigger .trigger-label-less {
+    display: inline;
+}
+
+.calendar-accordion-trigger .calendar-accordion-trigger-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.calendar-accordion-item.is-open .calendar-accordion-trigger .calendar-accordion-trigger-icon {
+    transform: rotate(180deg);
+}
