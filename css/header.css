@@ -2,7 +2,7 @@
 .header {
     /* background-color: rgb(0, 0, 50); */
     background-color: #ffffff;
-    padding: 0px 0;
+    padding: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: #2d3091;
     /* color: white; */
@@ -20,6 +20,7 @@
     color: #ffffff;
     font-size: 32px;
     transition: all 0.3s ease;
+    
   }
   
   .header-container {

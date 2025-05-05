@@ -147,3 +147,14 @@ time {
 .calendar-accordion-item.is-open .calendar-accordion-trigger .calendar-accordion-trigger-icon {
     transform: rotate(180deg);
 }
+/* 
+.calendar-accordion-item {
+    display: none;
+}
+
+.calendar-container {
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+    padding-bottom: 0rem;
+} */
