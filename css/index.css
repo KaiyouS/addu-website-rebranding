@@ -1,38 +1,54 @@
-.section-intro {
-  padding: 5rem 0;
+.hero {
+  background: 
+      linear-gradient(0deg, 
+          rgb(2, 2, 56) 0%, 
+          rgba(2, 2, 56, 1) 5%,
+          rgba(0, 16, 46, 0.6) 100%),
+          
+      url(../img/program-offerings.png) no-repeat center center;
 }
-/* @media screen and (max-width:1200px){.section-intro{padding:5rem 0 2.5rem}}@media screen and (max-width:978px){.section-intro{padding:3.75rem 0 1.25rem}}@media screen and (max-width:600px){.section-intro{padding:2.5rem 0 1.25rem}} */
-.section-intro .wrapper {
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-section {
+  /* border: 2px solid red; */
+  /* padding: 5rem 0; */
+}
+/* @media screen and (max-width:1200px){.intro-section{padding:5rem 0 2.5rem}}@media screen and (max-width:978px){.intro-section{padding:3.75rem 0 1.25rem}}@media screen and (max-width:600px){.intro-section{padding:2.5rem 0 1.25rem}} */
+
+.intro-section .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 0.5625rem;
-  background: url("/assets/design/intro.png") top 40% center
-    no-repeat;
+  background: url("/assets/design/intro.png") top 40% center no-repeat;
+  width: 94rem;
   background-size: 93.3125rem 32.6875rem;
 }
-.section-intro .wrapper .intro-title {
+.intro-section .wrapper .intro-title {
   font-family: 'EB Garamond', serif;
   font-weight: 500;
   font-size: 3.75rem;
   line-height: 1.2;
   text-transform: uppercase;
-  background: linear-gradient(269.98deg, #213673 0.93%, #b01117 100.76%);
+  background: linear-gradient(270deg, #213673 1%, #b01117 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(0, 0, 0, 0);
   background-clip: text;
   text-fill-color: rgba(0, 0, 0, 0);
 }
 
-/* @media screen and (max-width:1200px){.section-intro .wrapper .item-hashtag{font-size:3rem}}@media screen and (max-width:978px){.section-intro .wrapper .item-hashtag{font-size:2.625rem}}@media screen and (max-width:768px){.section-intro .wrapper .item-hashtag{font-size:2.25rem}}@media screen and (max-width:600px){.section-intro .wrapper .item-hashtag{font-size:1.875rem}}@media screen and (max-width:480px){.section-intro .wrapper .item-hashtag{font-size:1.5rem}} */
+/* @media screen and (max-width:1200px){.intro-section .wrapper .item-hashtag{font-size:3rem}}@media screen and (max-width:978px){.intro-section .wrapper .item-hashtag{font-size:2.625rem}}@media screen and (max-width:768px){.intro-section .wrapper .item-hashtag{font-size:2.25rem}}@media screen and (max-width:600px){.intro-section .wrapper .item-hashtag{font-size:1.875rem}}@media screen and (max-width:480px){.intro-section .wrapper .item-hashtag{font-size:1.5rem}} */
 
-.section-intro .wrapper p {
+.intro-section .wrapper p {
   margin: 0;
   max-width: 31.5625rem;
-}
-.section-intro .wrapper p .extracontent1 {
-  color: var(--colorParagraph);
 }
 /* @media screen and (max-width:720px){.section-links .wrapper ul{flex-direction:column;align-items:center;border:none}} */
 
@@ -40,6 +56,212 @@
 
 .section-levels {
     background-image: url('/assets/design/abstract-white-texture.png');
-    opacity: 0.4;
+    opacity: 0.35;
     height: 600px;
+}
+
+
+.school-level-section {
+  flex-direction: column;
+  background-color: rgb(0, 0, 50);
+  background: linear-gradient(135deg, rgb(0, 0, 50), rgb(0, 0, 125));
+  color: #ffffff;
+  margin: 40px auto;
+  padding: 5rem 3rem;
+}
+
+.school-level-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  padding-bottom: 5rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: 'EB Garamond', serif;
+  font-size: 50px;
+  font-weight: 500;
+  color: #ffffff;
+  
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 30px 0;
+    line-height: 1.1;
+  
+}
+
+.school-level-cards {
+  /* max-width: 70vw; */
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(60, 60, 60, 0.10);
+  overflow: hidden;
+  width: 330px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(60, 60, 60, 0.16);
+  transform: translateY(-10px);
+  transform: scale(1.06);
+}
+
+
+.img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px 20px 20px;
+  min-height: 100px;
+  height: 100%;
+  gap: 12px;
+}
+
+.card-content-text {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 6px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333333;
+  line-height: 1.3;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 400;
+  margin-top: 2px;
+  text-align: justify;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: #1a237e;
+  margin-left: 12px;
+  margin-top: auto;
+}
+
+
+.announcement-section .wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.upcoming-dates {
+  width: 45vw;
+}
+
+.feed {
+  transform: scale(1.25) translateX(20%);
+}
+
+.dates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.item-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #000000;
+  padding-bottom: 1rem;
+}
+
+.link {
+  width: 175px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid #2C318F;
+  color: #2C318F;
+  border-radius: 100px;
+  padding: 6px 12px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+a.link {
+  color: #2C318F;
+  padding: 0.5rem
+}
+
+.link:hover {
+  background-color: #2C318F;
+  color: #ffffff;
+}
+
+.calendar-accordion-date {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 11%;
+  font-weight: 700;
+  color: #2C318F;
+  line-height: 1;
+  box-shadow: 1px 0 0 hsla(0, 0%, 85%, .5);
+}
+
+.calendar-accordion-date .month {
+  font-size: 1rem;
+  color:#555555;
+  font-weight: 500;
+  padding-bottom: 10px;
+  /* line-height: 1; */
+}
+
+.calendar-accordion-date .day {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+time {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.calendar-accordion-labels {
+  padding: 10px 0 15px 0;
+}
+
+.calendar-accordion-label {
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+  font-size: 1rem;
+  margin-top:0;
+  padding-left: 3rem;
+}
+
+.calendar-accordion-item {
+  box-shadow: 0 -1px 0 hsla(0, 0%, 85%, .5);
+}
+
+.calendar-accordion-header {
+  padding: 0px 0 10px 0;
 }

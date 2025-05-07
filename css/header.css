@@ -165,7 +165,7 @@
   bottom: 0;
 }
 
-body.overlay-active {
+.overlay-active body {
   overflow: hidden;
 }
 

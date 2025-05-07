@@ -39,12 +39,6 @@ function initializeAccordions() {
 fetch("calendar-data.json")
     .then((res) => res.json())
     .then((data) => {
-        const mainContainer = document.getElementById("calendar");
-        if (!mainContainer) {
-            console.error("Error: calendar-container element not found!");
-            return;
-        }
-
         if (data.academicYears && data.academicYears.length > 0) {
             data.academicYears.forEach(academicYear => {
                 const mainContainer = document.getElementById("calendar");
