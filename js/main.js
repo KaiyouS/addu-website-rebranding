@@ -1,3 +1,11 @@
+document.querySelector('.scroll-down-icon a').addEventListener('click', function (event) {
+    event.preventDefault();
+    window.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth'
+    });
+});
+
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 window.addEventListener("scroll", () => {
@@ -24,21 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchIcon && searchOverlay) {
         searchIcon.addEventListener('click', (event) => {
             event.preventDefault();
-            searchOverlay.classList.add('active');
-            document.body.classList.add('overlay-active');
+            searchOverlay.style.display = "flex";
+            setTimeout(() => {
+                searchOverlay.classList.add('active');
+                document.body.classList.add('overlay-active');
+            }, 1);
         });
 
-        searchOverlay.addEventListener('click', (event) => {
-            if (event.target === searchOverlay) {
-                searchOverlay.classList.remove('active');
-                document.body.classList.remove('overlay-active'); 
-            }
-        });
+        // searchOverlay.addEventListener('click', (event) => {
+        //     if (event.target === searchOverlay) {
+        //         searchOverlay.classList.remove('active');
+        //         document.body.classList.remove('overlay-active'); 
+        //         setTimeout(() => { searchOverlay.style.display = "none";}, 500);
+        //     }
+        // });
         
         closeBtn.addEventListener('click', (event) => {
             if (event.target === closeBtn) {
                 searchOverlay.classList.remove('active');
                 document.body.classList.remove('overlay-active'); 
+                setTimeout(() => { searchOverlay.style.display = "none";}, 500);
             }
         });
     }

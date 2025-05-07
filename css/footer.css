@@ -1,6 +1,6 @@
 .footer {
   /* background-color: #1c1c1c; */
-  background-color: rgb(0, 0, 50);
+  background-color: rgb(4, 3, 84);
   /* background-color: #1b1e56 ; */
   color: #e5e5e5;
   display: flex;
@@ -8,7 +8,7 @@
   align-items: center;
   padding: 80px 0;
 
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
 
 .footer-container {

@@ -1,3 +1,13 @@
+.hero {
+  background: linear-gradient(
+      0deg,
+      rgb(4, 3, 54) 0%,
+      rgba(4, 3, 64, 1) 5%,
+      rgba(4, 3, 84, 0.6) 100%
+    ),
+    url(../img/program-offerings.png) no-repeat center center / cover;
+}
+
 li a i {
   margin-left: 5px;
 }
@@ -21,6 +31,8 @@ ul li a {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 5rem;
+  padding-bottom: 15rem;
 }
 .school-wrapper {
   width: 100%;
@@ -34,25 +46,27 @@ ul li a {
 }
 
 .divider-line {
-  border-top: 2px solid #000000;
+  border-top: 2px solid #eeeeee;
   margin: 0 auto 100px auto;
   width: 100%;
   /* max-width: 1320px; */
 }
 
 .school-prefix {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "EB Garamond", sans-serif;
+  font-style: italic;
+  /* text-transfor */
   font-size: 32px;
   font-weight: 700;
-  color: #333333;
-  margin: 0 0 10px 0;
+  color: #c3a12a;
+  margin: 0 0 25px 0;
 }
 
 .school-title {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 72px;
   font-weight: 700;
-  color: #333333;
+  color: rgb(47, 53, 144);
   margin: 0 0 30px 0;
   line-height: 1.1;
 }
@@ -80,7 +94,6 @@ ul li a {
   box-shadow: 0px 6px 20px 7px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .cluster-card {
   display: flex;
@@ -169,24 +182,24 @@ ul li a {
     font-size: 20px;
     line-height: 1.5;
   }
-  
+
   .container {
     max-width: 620px;
-  }  
-  
+  }
+
   .school-header-container {
     margin: 75px 0 0 0;
     padding: 0;
   }
-  
+
   .divider-line {
     display: none;
   }
-  
+
   .school-prefix {
     font-size: 16px;
   }
-  
+
   .school-title {
     font-size: 50px;
     font-weight: 700;
@@ -194,7 +207,7 @@ ul li a {
     margin: 0;
     padding: 0;
   }
-  
+
   .school-description {
     display: none;
   }
@@ -203,16 +216,16 @@ ul li a {
     width: 100px;
     height: 100px;
   }
-  
+
   .cluster-card {
     display: flex;
     align-items: center;
   }
-  
+
   .content h2 {
     font-size: 44px;
   }
-  
+
   .content p {
     display: none;
   }
@@ -223,44 +236,45 @@ ul li a {
     font-size: 18px;
     line-height: 1.5;
   }
-  
-  .school-title, .content h2 {
+
+  .school-title,
+  .content h2 {
     font-size: 32px;
   }
-  
+
   .programs.show {
     padding: 25px;
-}
+  }
 }
 
-@media (max-width: 575px) {  
+@media (max-width: 575px) {
   ul li a {
     font-size: 12px;
     line-height: 1.5;
   }
-  
+
   .school-title {
     font-size: 28px;
   }
-  
+
   .cluster-card-wrapper {
     border-radius: 10px;
   }
-  
+
   .cluster-card {
     padding: 15px 15px;
     border-radius: 10px;
   }
-  
+
   .logo {
     width: 75px;
     height: 75px;
   }
-  
+
   .content {
     margin-left: 15px;
   }
-  
+
   .content h2 {
     font-size: 24px;
   }

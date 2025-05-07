@@ -1,138 +1,137 @@
-
 .header {
-    /* background-color: rgb(0, 0, 50); */
-    background-color: #ffffff;
-    padding: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #2d3091;
-    /* color: white; */
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    font-size: 22px;
-    transition: all 0.3s ease;
-  }
-  
-  .header-v2 {
-    background: linear-gradient(180deg, rgba(0, 0, 50, 0.85) 0%, rgba(0, 0, 50, 0) 100%);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
-    color: #ffffff;
-    font-size: 32px;
-    transition: all 0.3s ease;
-    
-  }
-  
-  .header-container {
-    height: 70px;
-    /* max-width: 1320px; */
-    max-width: 92%;
-    margin: 0 auto;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    transition: all 0.3s ease;
-  }
-  
-  .header-container-v2 {
-    height: 120px;
-    transition: all 0.3s ease;
-  }
-  
-  .header-logo-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .header-logo-text {
-    font-family: 'EB Garamond', serif;
-    font-weight: 500;
-    margin-left: 10px;
-  }
-  
-  .header-logo {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: #d9d9d900;
-    flex-shrink: 0;
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    /* flex: 1 1 200px; */
-    background-image: url('../assets/logos/UniversitySeal.png');
-    transition: all 0.3s ease;
-  }
-  
-  .header-logo-v2 {
-    height: 75px;
-    width: 75px;
-    transition: all 0.3s ease;
-  }
-  
-  .navigation {
-    font-size: 20px;
-  }
-  
-  .navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .navigation li {
-    margin-left: 25px;
-  }
-  
-  .navigation li:first-child {
-    margin-left: 0;
-  }
-  
-  .navigation a {
-    text-decoration: none;
-    font-weight: 600; 
-    position: relative; 
-    padding: 5px 0; 
-  }
-  
-  .navigation a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px; 
-    background-color: currentColor; 
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease; 
-  }
-  
-  .navigation a:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  
-  .navigation a:not(:hover)::after {
-    transform-origin: right; 
-  }
-  
+  /* background-color: rgb(4, 3, 84); */
+  background-color: #ffffff;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #2d3091;
+  /* color: white; */
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
 
- #___gcse_0 {
-    line-height: 1.5;
-  }
-  
-  .gs-title {
-    font-size: 16px;
-    font-weight: 600;
-  }
-  
-  
+.header-v2 {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 50, 0.85) 0%,
+    rgba(0, 0, 50, 0) 100%
+  );
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  color: #ffffff;
+  font-size: 32px;
+  transition: all 0.3s ease;
+}
+
+.header-container {
+  height: 70px;
+  /* max-width: 1320px; */
+  max-width: 92%;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  transition: all 0.3s ease;
+}
+
+.header-container-v2 {
+  height: 120px;
+  transition: all 0.3s ease;
+}
+
+.header-logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo-text {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.header-logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #d9d9d900;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  /* flex: 1 1 200px; */
+  background-image: url("../assets/logos/UniversitySeal.png");
+  transition: all 0.3s ease;
+}
+
+.header-logo-v2 {
+  height: 75px;
+  width: 75px;
+  transition: all 0.3s ease;
+}
+
+.navigation {
+  font-size: 20px;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navigation li {
+  margin-left: 25px;
+}
+
+.navigation li:first-child {
+  margin-left: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  padding: 5px 0;
+}
+
+.navigation a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navigation a:not(:hover)::after {
+  transform-origin: right;
+}
+
+#___gcse_0 {
+  line-height: 1.5;
+}
+
+.gs-title {
+  font-size: 16px;
+  font-weight: 600;
+}
 
 #search-overlay h1 {
   position: absolute;
@@ -140,7 +139,7 @@
   right: 60px;
   font-size: 52px;
   font-weight: 100px;
-  color:white;
+  color: white;
   cursor: pointer;
 }
 
@@ -150,16 +149,15 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgb(0, 0, 50);
+  background-color: rgb(4, 3, 84);
   z-index: 10000;
-  transition: bottom 1s ease-in-out;
+  transition: bottom 0.7s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 80px;
 }
-
 
 #search-overlay.active {
   bottom: 0;
@@ -170,8 +168,8 @@
 }
 
 #search-overlay .search-logo-container {
-  top: 20px;          
-  left: 20px;         
+  top: 20px;
+  left: 20px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -187,17 +185,17 @@
 }
 
 #search-overlay .search-logo-text {
-  font-family: 'EB Garamond', serif;
+  font-family: "EB Garamond", serif;
   font-weight: 500;
   font-size: 3rem;
-  color: #ffffff
+  color: #ffffff;
 }
 
 #search-overlay .search-logo-text {
-  font-family: 'EB Garamond', serif;
+  font-family: "EB Garamond", serif;
   font-weight: 500;
   font-size: 3rem;
-  color: #ffffff
+  color: #ffffff;
 }
 
 .custom-search-bar {
@@ -207,14 +205,12 @@
   width: 800px;
 }
 
-
 #search-overlay .custom-search-bar .gsc-control-cse {
   background-color: transparent;
   border: none;
   padding: 0;
   width: 800px;
 }
-
 
 #search-overlay .custom-search-bar .gsc-search-box-tools .gsc-search-box {
   border: 1px solid #dfe1e5;
@@ -242,7 +238,6 @@
   min-width: 0;
 }
 
-
 #search-overlay .custom-search-bar button.gsc-search-button {
   border: none;
   background: none;
@@ -252,7 +247,7 @@
   flex-shrink: 0;
 }
 #search-overlay .custom-search-bar button.gsc-search-button svg {
-  fill: #4285F4;
+  fill: #4285f4;
   width: 24px;
   height: 24px;
   display: block;

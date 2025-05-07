@@ -1,0 +1,96 @@
+.hero {
+  background: linear-gradient(
+      0deg,
+      rgb(4, 3, 54) 0%,
+      rgb(4, 3, 64) 5%,
+      rgba(4, 3, 84, 0.6) 100%
+    ),
+    url(../img/alumni.png) no-repeat center center / cover;
+}
+
+.alumni-id-section {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.alumni-id-header h2 {
+  font-family: "EB Garamond", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2f3590;
+}
+
+.alumni-id-header .highlight {
+  color: #c3a12a;
+}
+
+.alumni-id-header p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  margin: 1rem 0 2rem;
+}
+
+.alumni-id-header .btn-two {
+  padding: 0.75rem 1.5rem;
+  background-color: #c3a12a;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.alumni-id-header .btn-two:hover {
+  background-color: #a48823;
+}
+
+.alumni-id-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.alumni-id-cards .card {
+  text-align: center;
+  max-width: 300px;
+}
+
+.alumni-id-cards .card img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.alumni-id-cards .card h3 {
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+  color: #2f3590;
+  margin: 1rem 0 0.5rem;
+}
+
+.alumni-id-cards .card p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #333333;
+}
+
+/* News Section */
+.news-section {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.news-section h2 {
+  font-family: "EB Garamond", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2f3590;
+  margin-bottom: 2rem;
+}
+
+.news-container {
+}
