@@ -8,7 +8,7 @@
     url(../img/calendar.png) no-repeat center center / cover;
 }
 
-.calendar-image img {
+img.calendar-image {
   display: block;
   max-width: 60%;
   height: auto;
