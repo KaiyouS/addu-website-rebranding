@@ -22,7 +22,8 @@ fetch("calendar-data.json")
   .then((res) => res.json())
   .then((data) => {
     if (data.academicYears && data.academicYears.length > 0) {
-      const currentDate = new Date();
+      currentDate = new Date();
+      currentDate.setYear(2024);
       const upcomingEvents = [];
 
       data.academicYears.forEach((academicYear) => {
