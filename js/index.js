@@ -134,8 +134,6 @@ fetch("calendar-data.json")
         // container.insertAdjacentHTML('beforeend', eventItemHTML);
         mainContainer.insertAdjacentHTML("beforeend", eventItemHTML);
       });
-
-      initializeAccordions();
     }
   })
   .catch((error) => console.error("Error loading JSON:", error));
