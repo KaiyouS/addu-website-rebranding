@@ -57,35 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-function scalePage() {
-    const baseWidth = 1920;
-    const thresholdWidth = 1600;
-    const scale = window.innerWidth < thresholdWidth ? Math.min(window.innerWidth / baseWidth, 1) : 1;
-
-    document.body.style.transform = `scale(${scale})`;
-    document.body.style.transformOrigin = 'top left';
-    document.body.style.width = `${100 / scale}%`;
-  }
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 1600) {
-        scalePage();
-    }
-});
-
-window.addEventListener('load', () => {
-    if (window.innerWidth <= 1600) {
-        scalePage();
-    }
-});
-
-if (window.innerWidth <= 1600) {
-    window.addEventListener('resize', scalePage);
-    window.addEventListener('load', scalePage);
-}
-
-
 document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
     this.reset();
