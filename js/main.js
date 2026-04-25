@@ -57,8 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.querySelector('form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    this.reset();
-    alert('Your message has been sent!');
-  });
+const contactForm = document.querySelector('form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        this.reset();
+        alert('Your message has been sent!');
+    });
+}
