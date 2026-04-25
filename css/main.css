@@ -156,12 +156,17 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: linear-gradient(0deg, rgb(4, 3, 54) 0%, rgb(4, 3, 64) 5%, rgba(4, 3, 84, 0.6) 100%),#ffffff; */
+  background: 
+    linear-gradient(
+      0deg, #040336 0%,
+      #040340 5%,
+      #04035499 100%
+    ),
+    var(--hero-bg) no-repeat center center / cover;
   background-size: cover;
   color: #ffffff;
   text-align: center;
   position: relative;
-  /* margin-bottom: 100px; */
 }
 
 .hero .hero-inner {
