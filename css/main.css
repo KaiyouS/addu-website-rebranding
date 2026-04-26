@@ -127,7 +127,8 @@ section {
 }
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  padding: 120px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,19 +151,18 @@ section {
 
 .hero .hero-inner h1 {
   font-family: "EB Garamond", serif;
-  font-size: 84px;
-  /* text-decoration: underline; */
+  font-size: 4rem;
   text-decoration-thickness: 3px;
-  text-decoration-color: rgba(255, 255, 255);
+  text-decoration-color: #ffffff;
   text-underline-offset: 10px;
   font-weight: 700;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.75);
+  text-shadow: 2px 2px 10px #000000bf;
   margin-bottom: 16px;
 }
 
 .hero .hero-inner p {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1.1rem;
   font-weight: 300;
   line-height: 2;
   margin-bottom: 16px;
@@ -188,16 +188,24 @@ section {
   border-radius: 35px;
   border: 2px solid #c3a12a;
   color: #c3a12a;
-  margin-bottom: 150px;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hero .hero-inner .hero-btn .btn-one:hover {
-  background: #c3a12a;
-  color: #333333;
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+@media (hover: hover) and (pointer: fine) {
+  .hero .hero-inner .hero-btn .btn-one:hover {
+    background: #c3a12a;
+    color: #333333;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
 }
+
+.hero .hero-inner .hero-btn .btn-one:active {
+  transform: scale(0.95);
+  background: transparent;
+  color: #c3a12a; 
+}
+
 .hero .hero-inner .hero-btn .btn-two {
   padding: 8px 14px;
   border-radius: 5px;
@@ -215,7 +223,11 @@ section {
   }
 }
 
-html { font-size: 100%; }
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
 
 @media (max-width: 1400px) {
   html { font-size: 95%; }
@@ -227,4 +239,29 @@ html { font-size: 100%; }
 
 @media (max-width: 1100px) {
   html { font-size: 85%; }
+  
+  .hero .hero-inner { width: 85%; }
+  
+  .hero .hero-inner h1 { font-size: 3.2rem; }
+  
+  .hero .hero-inner .hero-btn .btn-one { margin-bottom: 100px; }
+}
+
+@media (max-width: 650px) {
+  .hero .hero-inner { width: 92%; }
+  
+  .hero .hero-inner h1 { font-size: 2.8rem; }
+  
+  .hero .hero-inner p { font-size: 1rem; }
+  
+  .hero .hero-inner .hero-btn .btn-one { margin-bottom: 80px; }
+}
+
+@media (max-width: 480px) {
+  .hero .hero-inner h1 { font-size: 2.35rem; }
+  
+  .hero .hero-inner .hero-btn .btn-one { 
+    margin-bottom: 60px; 
+    padding: 0.8rem 1.6rem;
+  }
 }
