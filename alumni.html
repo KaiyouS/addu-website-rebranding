@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/search-overlay.css">
     <link rel="stylesheet" href="./css/alumni.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -151,6 +152,31 @@
     <button id="scrollToTopBtn" class="scroll-to-top">
         <i class="fas fa-angle-up"></i>
     </button>
+
+    <div id="search-overlay">
+        <div class="overlay-scroll-container">
+            <!-- Sticky top bar with close button -->
+            <div class="overlay-topbar">
+                <button class="search-close-btn" id="search-close-btn" aria-label="Close search">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L12 12M12 1L1 12" stroke="currentColor" stroke-width="1.75"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Content -->
+            <div class="search-content-wrapper">
+                <div class="search-logo-container">
+                    <div class="search-logo"></div>
+                    <div class="search-logo-text">ATENEO DE DAVAO</div>
+                </div>
+                <div class="custom-search-bar">
+                    <script async src="https://cse.google.com/cse.js?cx=57bb6bc7506c5458e"></script>
+                    <div class="gcse-search"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="disclaimer">Unofficial student project for academic purposes only.</div>
 

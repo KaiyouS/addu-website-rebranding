@@ -1,0 +1,610 @@
+#search-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9000;
+
+  overscroll-behavior: contain;
+
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+
+  background:
+    radial-gradient(circle, #ffffff0a 1px, transparent 1px) 0 0 / 28px 28px,
+    radial-gradient(ellipse 80% 65% at 50% 30%, #0a0872 0%, #040354 55%, #020230 100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.overlay-scroll-container {
+  /* position: absolute already establishes a containing block for
+     the absolutely-positioned .search-content-wrapper child */
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+#search-overlay.active {
+  transform: translateY(0);
+}
+
+/* ── Lock outer scroll while results are open ── */
+#search-overlay.has-results .overlay-scroll-container {
+  overflow: hidden;
+}
+
+/* ── Sticky top bar (close button) ── */
+.overlay-topbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 24px 24px;
+  z-index: 10;
+  background: linear-gradient(to bottom, #040354 10%, transparent);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.search-close-btn {
+  pointer-events: all;
+  background: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.search-close-btn:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ══════════════════════════════════════════════
+   CONTENT WRAPPER
+   Default: absolute-centered (no margin: auto needed).
+   has-results: slides to top via top + transform transition.
+══════════════════════════════════════════════ */
+.search-content-wrapper {
+  position: absolute;
+
+  /* Vertical centering — both transition smoothly */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* Horizontal centering */
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  z-index: 2;
+  width: 100%;
+  max-width: 780px;
+  padding: clamp(80px, 12dvh, 160px) 32px clamp(80px, 16dvh, 200px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+
+  /* Smooth move between centered ↔ top-anchored */
+  transition:
+    top     0.45s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+    padding   0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ── has-results: pin wrapper near top ── */
+#search-overlay.has-results .search-content-wrapper {
+  top: 0;
+  transform: translateY(0);
+  padding-top: clamp(55px, 7dvh, 80px);
+  padding-bottom: 24px;
+}
+
+/* ── Brand logo ── */
+.search-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.search-logo {
+  background-image: url(../assets/logos/UniversitySealWhite.png);
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  transition: width 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+              height 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.search-logo-text {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+  font-size: 2.75rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+  transition: font-size 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Slightly compact logo when results are showing */
+#search-overlay.has-results .search-logo {
+  width: 60px;
+  height: 60px;
+}
+
+#search-overlay.has-results .search-logo-text {
+  font-size: 1.85rem;
+}
+
+/* ── CSE container ── */
+.custom-search-bar {
+  width: 100%;
+}
+
+/* ══════════════════════════════════════════════
+   RESULTS — escape to fixed below the sticky header
+   JS writes --search-results-top after transition ends
+══════════════════════════════════════════════ */
+#search-overlay.has-results .gsc-results-wrapper-nooverlay {
+  position: fixed !important;
+  top: 200% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: min(780px, calc(100vw - 64px)) !important;
+  height: calc(100dvh - var(--search-results-top, 220px) - 8px) !important;
+  max-height: none !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding: 4px 0 60px !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  z-index: 1 !important;
+  scrollbar-gutter: stable both-edges;
+  scrollbar-color: #95700b #00000000;
+
+  animation: resultsFadeIn 0.3s ease 0.45s both;
+}
+
+@keyframes resultsFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ══════════════════════════════════════════════
+   GOOGLE CSE OVERRIDES — full-width layout
+══════════════════════════════════════════════ */
+#search-overlay #recaptcha-wrapper {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 16px 20px !important;
+  color: #ffffff !important;
+  width: fit-content !important;
+  margin: 50px auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+#search-overlay .gs-captcha-info-link {
+  color: #9a781d !important;
+}
+
+#search-overlay .custom-search-bar .gsc-control-cse {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* Remove max-widths */
+#search-overlay .gsc-control-cse,
+#search-overlay .gsc-control-wrapper-cse,
+#search-overlay .gsc-results-wrapper-nooverlay,
+#search-overlay .gsc-wrapper,
+#search-overlay .gsc-resultsRoot,
+#search-overlay .gsc-expansionArea,
+#search-overlay .gsc-webResult.gsc-result,
+#search-overlay .gsc-result-info,
+#search-overlay .custom-search-bar .gsc-control-wrapper-cse,
+#search-overlay .custom-search-bar form.gsc-search-box-tools {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.gsc-control-wrapper-cse {
+  width: min-content;
+}
+
+.gsc-search-box.gsc-search-box-tools {
+  margin: 0 !important;
+}
+
+#search-overlay .custom-search-bar td.gsc-clear-button {
+  display: none !important;
+}
+
+#search-overlay .custom-search-bar .gsc-search-bar,
+#search-overlay .custom-search-bar .gsc-search-wrapper,
+#search-overlay .custom-search-bar .gsc-input-box-container {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#search-overlay .gs-spelling {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.9rem !important;
+  padding: 0 0 12px 4px !important;
+}
+
+#search-overlay .gs-spelling a {
+  color: #a8c4ff !important;
+  text-decoration: underline !important;
+  cursor: pointer !important;
+}
+
+#search-overlay .gs-spelling a:hover {
+  color: #fff !important;
+}
+
+/* ── THE PILL ── */
+#search-overlay .custom-search-bar .gsc-search-box-tools .gsc-search-box {
+  display: flex !important;
+  align-items: center !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 8px 10px 8px 20px !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  height: 3rem !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.15) !important;
+  transition: box-shadow 0.2s !important;
+}
+
+#search-overlay .custom-search-bar .gsc-search-box-tools .gsc-search-box:focus-within {
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.45), 0 0 0 2.5px rgba(255, 255, 255, 0.55) !important;
+}
+
+/* Input <td> */
+#search-overlay .custom-search-bar td.gsc-input {
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Input box wrapper */
+#search-overlay .custom-search-bar .gsc-input-box {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  height: auto !important;
+}
+
+/* The actual <input> */
+#search-overlay .custom-search-bar input.gsc-input {
+  border: none !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  padding: 6px 0 !important;
+  margin: 0 !important;
+  color: #1a1a2e !important;
+  font-size: 1.125rem !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+#search-overlay .custom-search-bar input.gsc-input::placeholder {
+  color: #aaa !important;
+}
+
+/* Search button <td> */
+#search-overlay .custom-search-bar td.gsc-search-button {
+  padding: 0 !important;
+  width: auto !important;
+  flex-shrink: 0 !important;
+}
+
+/* Search button — navy circle */
+#search-overlay .custom-search-bar button.gsc-search-button,
+#search-overlay .custom-search-bar button.gsc-search-button-v2 {
+  background: #040354 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+
+#search-overlay .custom-search-bar button.gsc-search-button:hover,
+#search-overlay .custom-search-bar button.gsc-search-button-v2:hover {
+  background: #0a0872 !important;
+  transform: scale(1.07) !important;
+}
+
+#search-overlay .custom-search-bar button.gsc-search-button svg,
+#search-overlay .custom-search-bar button.gsc-search-button-v2 svg {
+  fill: #ffffff !important;
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+}
+
+/* Full-width results container (base styles) */
+#search-overlay .gsc-results-wrapper-nooverlay {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-top: 16px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Result cards */
+#search-overlay .gsc-webResult.gsc-result {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 16px 20px !important;
+  margin-bottom: 10px !important;
+  transition: background 0.15s !important;
+}
+
+#search-overlay .gsc-webResult.gsc-result:hover {
+  background: rgba(255, 255, 255, 0.11) !important;
+}
+
+/* Result title */
+#search-overlay .gs-title,
+#search-overlay .gs-title * {
+  color: #a8c4ff !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+#search-overlay .gs-title:hover {
+  text-decoration: underline !important;
+}
+
+/* Result URL */
+#search-overlay .gsc-url-top,
+#search-overlay .gs-visibleUrl,
+#search-overlay .gs-fileFormat,
+#search-overlay .gs-fileFormatType {
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 0.78rem !important;
+}
+
+/* Result snippet */
+#search-overlay .gs-snippet {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Result count */
+#search-overlay .gsc-result-info {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-size: 0.8rem !important;
+  padding: 0 0 12px !important;
+}
+
+/* Hide separator bars */
+#search-overlay hr { display: none !important; }
+#search-overlay .gsc-webResult-divider { display: none; }
+
+/* Pagination */
+#search-overlay .gsc-cursor-box {
+  text-align: center !important;
+  margin-top: 24px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  border: none !important;
+}
+
+#search-overlay .gsc-cursor-page {
+  color: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-radius: 6px !important;
+  padding: 8px 14px !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+  transition: background 0.15s !important;
+  min-width: 40px !important;
+  text-align: center !important;
+}
+
+#search-overlay .gsc-cursor-current-page,
+#search-overlay .gsc-cursor-page:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+
+#search-overlay .gsc-cursor-box .gsc-cursor {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+#search-overlay .gsc-cursor-container-previous,
+#search-overlay .gsc-cursor-container-next {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: background 0.15s !important;
+}
+
+#search-overlay .gsc-cursor-container-previous:hover,
+#search-overlay .gsc-cursor-container-next:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+
+#search-overlay .gsc-cursor-container-previous:empty,
+#search-overlay .gsc-cursor-container-next:empty {
+  display: none !important;
+}
+
+#search-overlay .gsc-cursor-chevron {
+  fill: rgba(255, 255, 255, 0.7) !important;
+}
+
+#search-overlay .gsc-cursor-next-page {
+  display: none !important;
+}
+
+#search-overlay .gsc-cursor-numbered-page,
+#search-overlay .gsc-cursor-final-page {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 0.9rem !important;
+  padding: 0 8px !important;
+  min-width: 60px !important;
+  text-align: center !important;
+}
+
+/* Hide Google branding */
+#search-overlay .gsc-branding { display: none !important; }
+#search-overlay .gcsc-find-more-on-google { display: none !important; }
+
+/* ── Stagger-in entrance animations ── */
+#search-overlay.active .search-logo-container {
+  animation: fadeUp 0.55s 0.15s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+#search-overlay.active .custom-search-bar {
+  animation: fadeUp 0.55s 0.25s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE RESPONSIVE
+══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .search-content-wrapper {
+    padding: clamp(70px, 14dvh, 120px) 20px clamp(60px, 14dvh, 140px);
+    gap: 32px;
+  }
+
+  #search-overlay.has-results .search-content-wrapper {
+    padding-top: clamp(50px, 6dvh, 70px);
+    padding-bottom: 16px;
+  }
+
+  .search-logo-container {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .search-logo {
+    width: 72px;
+    height: 72px;
+  }
+
+  #search-overlay.has-results .search-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .search-logo-text {
+    font-size: 1.75rem;
+    letter-spacing: 0.1em;
+    white-space: normal;
+    text-align: center;
+  }
+
+  #search-overlay.has-results .search-logo-text {
+    font-size: 1.3rem;
+  }
+
+  #search-overlay .custom-search-bar .gsc-search-box-tools .gsc-search-box {
+    padding: 6px 10px 6px 16px !important;
+  }
+
+  #search-overlay .custom-search-bar input.gsc-input {
+    font-size: 1rem !important;
+  }
+
+  #search-overlay .custom-search-bar button.gsc-search-button,
+  #search-overlay .custom-search-bar button.gsc-search-button-v2 {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+
+  #search-overlay.has-results .gsc-results-wrapper-nooverlay {
+    width: calc(100vw - 40px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-logo-text {
+    font-size: 1.4rem;
+  }
+
+  .search-close-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-height: 500px) {
+  #search-overlay.has-results .search-logo-container {
+    display: none !important;
+  }
+  
+  .overlay-topbar {
+    padding: 10px 10px;
+  }
+}
