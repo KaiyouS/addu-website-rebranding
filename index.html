@@ -29,14 +29,19 @@
                 <div class="header-logo header-logo-v2" id="header-logo"></div>
                 <div class="header-logo-text">ATENEO DE DAVAO UNIVERSITY</div>
             </div>
-            <nav class="navigation">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="nav-overlay" id="nav-overlay"></div>
+            <nav class="navigation" id="main-nav">
                 <ul>
                     <li><a href="./index.html" class="slide-underline">Home</a></li>
                     <li><a href="./program-offerings.html" class="slide-underline">Offerings</a></li>
                     <li><a href="./alumni.html" class="slide-underline">Alumni</a></li>
                     <li><a href="./calendar.html" class="slide-underline">Calendar</a></li>
                     <li><a href="./contact.html" class="slide-underline">Contact Us</a></li>
-                    <li><a href="#" onclick="return false;" id="search-icon"><i class="fas fa-search"></i></a></li>
+                    <li><a href="#" id="open-search" class="slide-underline"><i class="fas fa-search"></i> </a></li>
                 </ul>
             </nav>
         </div>
@@ -140,6 +145,7 @@
         </div>
         </div>
     </section>
+    
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-top">
@@ -148,15 +154,26 @@
                     <div class="footer-logo-text">ATENEO DE DAVAO</div>
                 </div>
                 <div class="footer-links">
-                    <div><a href="#">Academics</a><a href="#">Finances</a><a href="#">Getting Help</a><a
-                            href="#">Registration & Course Selection</a></div>
-                    <div><a href="#">Communities</a><a href="#">New Student Resources</a><a href="#">Life at AdDU</a><a
-                            href="#">Residential Colleges</a></div>
-                    <div><a href="#">Events</a><a href="#">Get to Know AdDU</a><a href="#">Policies & Procedures</a>
+                    <div>
+                        <a href="#">Academics</a>
+                        <a href="#">Finances</a>
+                        <a href="#">Getting Help</a>
+                        <a href="#">Registration & Course Selection</a>
+                    </div>
+                    <div>
+                        <a href="#">Communities</a>
+                        <a href="#">New Student Resources</a>
+                        <a href="#">Life at AdDU</a>
+                        <a href="#">Residential Colleges</a>
+                    </div>
+                    <div>
+                        <a href="#">Events</a>
+                        <a href="#">Get to Know AdDU</a>
+                        <a href="#">Policies & Procedures</a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">Copyright © 2025 Ateneo de Davao University | Site by: ROQUE & SERRA</div>
+            <div class="footer-bottom">Copyright © 2025 Roque & Serra. All Rights Reserved</div>
         </div>
         </div>
     </footer>
@@ -168,7 +185,6 @@
     <div class="disclaimer">Unofficial student project for academic purposes only.</div>
 
     <script src="./js/main.js"></script>
-    <script src="./js/header.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

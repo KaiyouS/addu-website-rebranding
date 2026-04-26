@@ -1,72 +1,107 @@
+// ================================================
+// Scroll: Down arrow
+// ================================================
 const scrollDownLink = document.querySelector('.scroll-down-icon a');
 if (scrollDownLink) {
-    scrollDownLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        window.scrollBy({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
+  scrollDownLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth'
     });
+  });
 }
 
+// ================================================
+// Scroll: Back to top button
+// ================================================
 const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
 if (scrollToTopBtn) {
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 800) {
-            scrollToTopBtn.classList.add("show");
-        } else {
-            scrollToTopBtn.classList.remove("show");
-        }
-    });
+  window.addEventListener("scroll", () => {
+    scrollToTopBtn.classList.toggle("show", window.scrollY > 800);
+  }, { passive: true });
 
-    scrollToTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
+// ================================================
+// Header scroll state
+// ================================================
+const header          = document.getElementById("header");
+const headerContainer = document.getElementById("header-container");
+const headerLogo      = document.getElementById("header-logo");
 
-document.addEventListener('DOMContentLoaded', () => {
-    const searchIcon = document.getElementById('search-icon');
-    const searchOverlay = document.getElementById('search-overlay');
-    const closeBtn = document.getElementById("search-close-btn");
-    
-    if (searchIcon && searchOverlay) {
-        searchIcon.addEventListener('click', (event) => {
-            event.preventDefault();
-            searchOverlay.style.display = "flex";
-            setTimeout(() => {
-                searchOverlay.classList.add('active');
-                document.body.classList.add('overlay-active');
-            }, 1);
-        });
+function updateHeader() {
+  const scrolled = window.scrollY > 100;
+  header.classList.toggle("header-v2",           !scrolled);
+  headerContainer.classList.toggle("header-container-v2", !scrolled);
+  headerLogo.classList.toggle("header-logo-v2",  !scrolled);
+}
 
-        // searchOverlay.addEventListener('click', (event) => {
-        //     if (event.target === searchOverlay) {
-        //         searchOverlay.classList.remove('active');
-        //         document.body.classList.remove('overlay-active'); 
-        //         setTimeout(() => { searchOverlay.style.display = "none";}, 500);
-        //     }
-        // });
-        
-        closeBtn.addEventListener('click', (event) => {
-            if (event.target === closeBtn) {
-                searchOverlay.classList.remove('active');
-                document.body.classList.remove('overlay-active'); 
-                setTimeout(() => { searchOverlay.style.display = "none";}, 500);
-            }
-        });
-    }
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
+
+// ================================================
+// Panel manager
+// ================================================
+const hamburger      = document.getElementById("hamburger");
+const nav            = document.getElementById("main-nav");
+const navOverlay     = document.getElementById("nav-overlay");
+
+// Scroll lock (single class, single source of truth)
+const lockScroll   = () => document.documentElement.classList.add("no-scroll");
+const unlockScroll = () => document.documentElement.classList.remove("no-scroll");
+
+// Active panel state
+let activePanel = null; // 'nav' | null
+
+function openPanel(name) {
+  if (activePanel === name) return; // already open, nothing to do
+  closeAll();                       //  close whatever is currently open first
+
+  activePanel = name;
+  lockScroll();
+
+  if (name === 'nav') {
+    hamburger.classList.add("open");
+    nav.classList.add("nav-open");
+    navOverlay.classList.add("active");
+  }
+}
+
+function closeAll() {
+  if (!activePanel) return; // nothing open, skip unnecessary DOM writes
+
+  hamburger.classList.remove("open");
+  nav.classList.remove("nav-open");
+  navOverlay.classList.remove("active");
+  unlockScroll();
+  activePanel = null;
+}
+
+// ------------------------------------------------
+// Event listeners
+// ------------------------------------------------
+
+// Hamburger toggle
+hamburger.addEventListener("click", () => {
+  activePanel === 'nav' ? closeAll() : openPanel('nav');
 });
 
-const contactForm = document.querySelector('form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        this.reset();
-        alert('Your message has been sent!');
-    });
-}
+// Prevent clicks inside the nav drawer from reaching the backdrop
+nav.addEventListener("click", (e) => e.stopPropagation());
+
+// Click nav backdrop → close
+navOverlay.addEventListener("click", closeAll);
+
+// Nav links → close drawer (allows navigation to proceed normally)
+nav.querySelectorAll("a").forEach((a) => {
+  a.addEventListener("click", closeAll);
+});
+
+// Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeAll();
+});

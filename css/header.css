@@ -1,15 +1,13 @@
 .header {
-  /* background-color: rgb(4, 3, 84); */
   background-color: #ffffff;
   padding: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #2d3091;
-  /* color: white; */
   position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
-  font-size: 22px;
+  font-size: 1.375rem;
   transition: all 0.3s ease;
 }
 
@@ -21,13 +19,12 @@
   );
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
   color: #ffffff;
-  font-size: 32px;
+  font-size: 2rem;
   transition: all 0.3s ease;
 }
 
 .header-container {
   height: 70px;
-  /* max-width: 1320px; */
   max-width: 92%;
   margin: 0 auto;
   padding: 0 15px;
@@ -57,27 +54,51 @@
 }
 
 .header-logo {
-  height: 50px;
   width: 50px;
-  border-radius: 50%;
-  background-color: #d9d9d900;
+  aspect-ratio: 1 / 1;
   flex-shrink: 0;
   background-size: cover;
   background-position: center;
-  margin: 0;
-  /* flex: 1 1 200px; */
+  /* margin: 0; */
   background-image: url("../assets/logos/UniversitySeal.png");
   transition: all 0.3s ease;
 }
 
 .header-logo-v2 {
-  height: 75px;
   width: 75px;
   transition: all 0.3s ease;
 }
 
+/* ================================================
+   Scroll lock — single class on <html>,
+   used by both nav and search panels
+================================================ */
+html.no-scroll {
+  overflow: hidden;
+}
+ 
+/* ================================================
+   Nav backdrop overlay — was completely missing,
+   which is why "click outside" never worked
+================================================ */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1040; /* below nav drawer (1050), above page */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+ 
+.nav-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Navigation */
 .navigation {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .navigation ul {
@@ -100,6 +121,8 @@
   font-weight: 600;
   position: relative;
   padding: 5px 0;
+  color: inherit;
+  white-space: nowrap;
 }
 
 .navigation a::after {
@@ -124,131 +147,108 @@
   transform-origin: right;
 }
 
-#___gcse_0 {
-  line-height: 1.5;
-}
-
-.gs-title {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-#search-overlay h1 {
-  position: absolute;
-  top: 40px;
-  right: 60px;
-  font-size: 52px;
-  font-weight: 100px;
-  color: white;
-  cursor: pointer;
-}
-
-#search-overlay {
-  position: fixed;
-  bottom: -100vh;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(4, 3, 84);
-  z-index: 10000;
-  transition: bottom 0.7s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Hamburger button */
+.hamburger {
+  display: none;
   flex-direction: column;
-  gap: 80px;
-}
-
-#search-overlay.active {
-  bottom: 0;
-}
-
-.overlay-active body {
-  overflow: hidden;
-}
-
-#search-overlay .search-logo-container {
-  top: 20px;
-  left: 20px;
-  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 30px;
-}
-
-#search-overlay .search-logo {
-  background-image: url(../assets/logos/UniversitySealWhite.png);
-  width: 125px;
-  height: 125px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-#search-overlay .search-logo-text {
-  font-family: "EB Garamond", serif;
-  font-weight: 500;
-  font-size: 3rem;
-  color: #ffffff;
-}
-
-#search-overlay .search-logo-text {
-  font-family: "EB Garamond", serif;
-  font-weight: 500;
-  font-size: 3rem;
-  color: #ffffff;
-}
-
-.custom-search-bar {
-  width: 800px;
-}
-.gsc-input {
-  width: 800px;
-}
-
-#search-overlay .custom-search-bar .gsc-control-cse {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  width: 800px;
-}
-
-#search-overlay .custom-search-bar .gsc-search-box-tools .gsc-search-box {
-  border: 1px solid #dfe1e5;
-  background-color: white;
-  border-radius: 30px;
-  padding: 15px 25px;
-  margin-bottom: 0;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-#search-overlay .custom-search-bar input.gsc-input {
-  border: none;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
   background: none;
-  box-shadow: none;
-  outline: none;
-  padding: 8px 0;
-  margin: 0;
-  color: #333333;
-  flex-grow: 1;
-  font-size: 18px;
-  width: 100%;
-  min-width: 0;
-}
-
-#search-overlay .custom-search-bar button.gsc-search-button {
   border: none;
-  background: none;
-  padding: 0 10px;
-  margin: 0;
   cursor: pointer;
+  padding: 4px;
+  z-index: 1100;
   flex-shrink: 0;
 }
-#search-overlay .custom-search-bar button.gsc-search-button svg {
-  fill: #4285f4;
-  width: 24px;
-  height: 24px;
+
+.hamburger span {
   display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #2d3091;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.header-v2 .hamburger span {
+  background-color: #ffffff; 
+}
+
+.hamburger.open span,
+.header-v2 .hamburger.open span {
+  background-color: #ffffff; 
+}
+
+/* Animate into ✕ when open */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+@media (max-width: 1400px) {
+  .header-logo { width: 45px; }
+  .header-logo-v2 { width: 70px; }
+}
+
+@media (max-width: 1250px) {
+  .header-logo { width: 40px; }
+  .header-logo-v2 { width: 65px; }
+  
+  .navigation li {
+    margin-left: 12px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .header-logo { width: 35px; }
+  .header-logo-v2 { width: 60px; }
+  
+  .hamburger { display: flex; }
+  
+  .navigation {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(320px, 80vw);
+    height: 100vh;
+    background-color: rgb(4, 3, 84);
+    color: #ffffff;
+    padding: 90px 32px 32px;
+    z-index: 1050;
+    transition: right 0.35s ease;
+    overflow-y: auto;
+  }
+  
+  .navigation.nav-open { right: 0; }
+
+  .navigation ul { flex-direction: column; }
+
+  .navigation li { margin-left: 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+
+  .navigation a { display: block; padding: 14px 0; font-size: 18px; color: #ffffff; }
+}
+
+@media (max-width: 650px) {
+  .header-logo-v2 { width: 50px; }
+  .header-logo-text { font-size: 1.4rem  ;}
+}
+
+@media (max-width: 480px) {
+  .header-logo-v2 { width: 40px; }
+  .header-logo-text { font-size: 1.1rem  ;}
+}
+
+@media (max-width: 380px) {
+  .header-logo-v2 { width: 35px; }
+  .header-logo-text { font-size: 0.8rem  ;}
 }

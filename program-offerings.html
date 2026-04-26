@@ -31,14 +31,19 @@
                 <div class="header-logo header-logo-v2" id="header-logo"></div>
                 <div class="header-logo-text">ATENEO DE DAVAO UNIVERSITY</div>
             </div>
-            <nav class="navigation">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="nav-overlay" id="nav-overlay"></div>
+            <nav class="navigation" id="main-nav">
                 <ul>
                     <li><a href="./index.html" class="slide-underline">Home</a></li>
                     <li><a href="./program-offerings.html" class="slide-underline">Offerings</a></li>
                     <li><a href="./alumni.html" class="slide-underline">Alumni</a></li>
                     <li><a href="./calendar.html" class="slide-underline">Calendar</a></li>
                     <li><a href="./contact.html" class="slide-underline">Contact Us</a></li>
-                    <li><a href="#" onclick="return false;" id="search-icon"><i class="fas fa-search"></i></a></li>
+                    <li><a href="#" id="open-search" class="slide-underline"><i class="fas fa-search"></i> </a></li>
                 </ul>
             </nav>
         </div>
@@ -49,8 +54,8 @@
             <h1>Explore Our Programs</h1>
             <p>Discover a wide range of academic programs designed to prepare you for a bright future.</p>
             <div class="hero-btn">
-                <a href="https://www.addu.edu.ph/enrollment-for-first-year-students-transferees/" class="btn-one">ENROLL NOW</a>
-                <!-- <a href="#" class="btn-two">Download</a> -->
+                <a href="https://www.addu.edu.ph/enrollment-for-first-year-students-transferees/" class="btn-one">ENROLL
+                    NOW</a>
             </div>
         </div>
         <div class="scroll-down-icon"><a href="#next-section"><i class="fas fa-chevron-down"></i></a></div>
@@ -91,10 +96,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                Copyright © 2025 Roque & Serra. All Rights Reserved
-            </div>
+            <div class="footer-bottom">Copyright © 2025 Roque & Serra. All Rights Reserved</div>
         </div>
         </div>
     </footer>
@@ -106,7 +108,6 @@
     <div class="disclaimer">Unofficial student project for academic purposes only.</div>
 
     <script src="./js/main.js"></script>
-    <script src="./js/header.js"></script>
     <script src="./js/program-offerings.js"></script>
 </body>
 
