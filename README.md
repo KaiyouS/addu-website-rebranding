@@ -86,7 +86,7 @@ Content for the Academic Calendar and Program Offerings is dynamically generated
   <img src="./docs/images/desktop-calendar-content.png" width="80%" alt="Dynamic Calendar Rendering">
 </p>
 <p align="center">
-  <img src="./docs/images/desktop-program-offerings.png" width="80%" alt="Dynamic Calendar Rendering">
+  <img src="./docs/images/desktop-program-offerings.png" width="80%" alt="Dynamic Program Offerings Rendering">
 </p>
 
 ### Event-Driven UI (Search Overlay)
