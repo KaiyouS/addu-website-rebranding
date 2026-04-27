@@ -13,20 +13,6 @@ if (scrollDownLink) {
 }
 
 // ================================================
-// Scroll: Back to top button
-// ================================================
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-if (scrollToTopBtn) {
-  window.addEventListener("scroll", () => {
-    scrollToTopBtn.classList.toggle("show", window.scrollY > 800);
-  }, { passive: true });
-
-  scrollToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
-
-// ================================================
 // Header scroll state
 // ================================================
 const header          = document.getElementById("header");
