@@ -85,6 +85,9 @@ Content for the Academic Calendar and Program Offerings is dynamically generated
 <p align="center">
   <img src="./docs/images/desktop-calendar-content.png" width="80%" alt="Dynamic Calendar Rendering">
 </p>
+<p align="center">
+  <img src="./docs/images/desktop-program-offerings.png" width="80%" alt="Dynamic Calendar Rendering">
+</p>
 
 ### Event-Driven UI (Search Overlay)
 Custom search overlay triggered via DOM events, completely overriding Google Custom Search Engine's default injected styling.
