@@ -6,6 +6,6 @@ if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
     this.reset();
-    alert('Your message has been sent!');
+    alert('Simulation success! No real email was sent.');
   });
 }
