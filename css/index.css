@@ -23,7 +23,6 @@ section {
     ),
     url("/assets/pattern/bagobo-white.png") center no-repeat, #f5f5f5;
 }
-/* @media screen and (max-width:1200px){.intro-section{padding:5rem 0 2.5rem}}@media screen and (max-width:978px){.intro-section{padding:3.75rem 0 1.25rem}}@media screen and (max-width:600px){.intro-section{padding:2.5rem 0 1.25rem}} */
 
 .intro-section .wrapper {
   display: flex;
@@ -32,10 +31,14 @@ section {
   text-align: center;
   gap: 0.5625rem;
   background: url("/assets/design/intro.png") top 40% center no-repeat;
-  width: 75rem;
-  background-size: 93.3125rem 32.6875rem;
-  margin-bottom: 10rem;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-size: cover;
+  margin-bottom: 5rem;
 }
+
 .intro-section .wrapper .intro-title {
   font-family: "EB Garamond", serif;
   font-weight: 500;
@@ -52,13 +55,11 @@ section {
   background-clip: text;
 }
 
-/* @media screen and (max-width:1200px){.intro-section .wrapper .item-hashtag{font-size:3rem}}@media screen and (max-width:978px){.intro-section .wrapper .item-hashtag{font-size:2.625rem}}@media screen and (max-width:768px){.intro-section .wrapper .item-hashtag{font-size:2.25rem}}@media screen and (max-width:600px){.intro-section .wrapper .item-hashtag{font-size:1.875rem}}@media screen and (max-width:480px){.intro-section .wrapper .item-hashtag{font-size:1.5rem}} */
-
 .intro-section .wrapper p {
   margin: 0;
   max-width: 31.5625rem;
 }
-/* @media screen and (max-width:720px){.section-links .wrapper ul{flex-direction:column;align-items:center;border:none}} */
+
 .quick-links .wrapper {
   all: unset;
 }
@@ -69,7 +70,7 @@ section {
 }
 
 .quick-links .title h2 {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: bold;
   color: rgb(47, 53, 144);
   margin-bottom: 50px;
@@ -81,16 +82,13 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
-  /* flex-wrap: wrap; */
   gap: 1.5rem;
 }
 
 .quick-links .wrapper a.link {
-  /* flex: 40%; */
   box-shadow: 0 0 0 1px black;
-  width: 35rem;
-  /* padding: 1.5rem 3.5rem; */
-  /* margin-bottom: 10px; */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .school-level-section {
@@ -101,7 +99,6 @@ section {
     url("/assets/pattern/bagobo-ateneo-blue.png") center no-repeat,
     rgb(3, 2, 55);
   color: #ffffff;
-  /* margin: 40px auto; */
   padding: 5rem 3rem;
 }
 
@@ -113,12 +110,12 @@ section {
   letter-spacing: 0.5px;
   text-transform: uppercase;
   font-family: "EB Garamond", serif;
-  font-size: 50px;
+  font-size: 3.125rem;
   font-weight: 500;
   color: #ffffff;
 
   font-family: "Open Sans", sans-serif;
-  font-size: 72px;
+  font-size: 4.5rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 30px 0;
@@ -126,13 +123,10 @@ section {
 }
 
 .school-level-cards {
-  /* max-width: 70vw; */
   display: flex;
   gap: 32px;
   justify-content: center;
   flex-wrap: wrap;
-
-  /* flex-direction: column; */
 }
 
 .card {
@@ -140,7 +134,8 @@ section {
   border-radius: 15px;
   box-shadow: 0 4px 16px rgb(4, 3, 54);
   overflow: hidden;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: row;
   transition: box-shadow 0.2s, transform 0.2s;
@@ -154,8 +149,6 @@ section {
 
 .img {
   width: 45%;
-  /* height: auto; */
-
   object-fit: cover;
   display: block;
 }
@@ -217,14 +210,22 @@ section {
 .announcement-section .wrapper {
   display: flex;
   flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 20px;
+  gap: 40px;
 }
 
 .upcoming-dates {
-  width: 45vw;
+  flex: 2;
+  min-width: 0;
 }
 
 .feed {
-  transform: scale(1.25) translateX(20%);
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .dates-header {
@@ -282,7 +283,6 @@ a.link {
   font-weight: 500;
   padding-bottom: 10px;
   text-transform: initial;
-  /* line-height: 1; */
 }
 
 .calendar-accordion-date .day {
@@ -293,19 +293,20 @@ a.link {
 time {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 .calendar-accordion-labels {
   padding: 10px 0 15px 0;
+  width: 100%;
 }
 
 .calendar-accordion-label {
   font-family: "Open Sans", sans-serif;
   color: #333333;
   font-size: 1rem;
-  /* margin-top:0; */
   padding-left: 3rem;
+  width: auto; 
+  flex-grow: 1;
 }
 
 .calendar-accordion-item {
@@ -314,4 +315,139 @@ time {
 
 .calendar-accordion-header {
   padding: 0px 0 10px 0;
+}
+
+@media (max-width: 1100px) {
+  .intro-section .wrapper {
+    background-image: none;
+  }
+
+  .announcement-section .wrapper {
+    flex-direction: column;
+  }
+
+  #calendar {
+    padding-bottom: 0;
+  }
+  
+  .upcoming-dates {
+    width: 100%;
+  }
+
+  .feed {
+    transform: none; 
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto 0 auto;
+  }
+
+  .school-level-title {
+    font-size: 3.125rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .announcement-section {
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .calendar-accordion-labels {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 0;
+  }
+
+  .calendar-accordion-date {
+    width: 100%;
+    box-shadow: none;
+    border-bottom: none;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    flex-direction: row;
+    gap: 10px;
+    align-items: baseline;
+  }
+
+  .calendar-accordion-date .month {
+    padding-bottom: 0;
+  }
+
+  .calendar-accordion-label {
+    padding-left: 0;
+    width: 100%;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .quick-links .wrapper {
+    grid-template-columns: 1fr; 
+  }
+  
+  .quick-links .wrapper a.link {
+    font-size: 1rem;
+  }
+
+  .intro-section .wrapper .intro-title {
+    font-size: 2.8rem;
+  }
+
+  .school-level-title {
+    font-size: 2.5rem;
+  }
+
+  .card {
+    flex-direction: column;
+    max-width: 400px;
+  }
+
+  .img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .card-content {
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 650px) {
+  .intro-section .wrapper .intro-title {
+    font-size: 2.2rem;
+  }
+  
+  .school-level-section {
+    padding: 4rem 20px;
+  }
+
+  .school-level-title {
+    font-size: 2rem;
+    padding-bottom: 3rem;
+  }
+  
+  .card {
+    max-width: 300px;
+  }
+
+  .dates-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .feed {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  .item-title {
+    font-size: 2rem;
+  }
+
+  .feed {
+    max-width: 280px;
+  }
 }
