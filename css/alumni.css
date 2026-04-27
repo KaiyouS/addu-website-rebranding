@@ -1,6 +1,8 @@
 .alumni-id-section {
   text-align: center;
-  padding: 4rem 30rem;
+  padding: 5rem 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .alumni-id-header h2 {
@@ -44,8 +46,9 @@
 .alumni-id-cards {
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  margin-top: 5rem;
+  align-items: stretch;
+  gap: 3rem;
+  margin-top: 4rem;
 }
 
 .alumni-id-cards .card {
@@ -142,4 +145,45 @@
 
 .wrapper a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .alumni-id-section { padding: 4rem 20px; }
+  .alumni-id-cards { gap: 1.5rem; }
+  .membership-perks-section { padding: 4rem 20px; }
+}
+
+@media (max-width: 850px) {
+  .alumni-id-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  
+  .alumni-id-cards .card {
+    max-width: 100%;
+    width: 350px;
+  }
+
+  .alumni-id-header h2,
+  .wrapper h2 { 
+    font-size: 2.2rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .alumni-id-section { padding: 3rem 15px; }
+  
+  .alumni-id-header h2,
+  .wrapper h2 { 
+    font-size: 1.8rem; 
+  }
+  
+  .alumni-id-cards .card h3 { 
+    font-size: 1.25rem; 
+  }
+  
+  .wrapper h3 {
+    font-size: 1.2rem;
+  }
 }
