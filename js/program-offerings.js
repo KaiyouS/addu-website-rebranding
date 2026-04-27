@@ -15,23 +15,28 @@ fetch("data.json")
             </div>
             <div class="clusters-container">
         `;
+        
       if (index === 0) {
         schoolWrapper = schoolWrapper.replace(
           '<div class="divider-line"></div>',
           '<div class="divider-line" style="display: none;"></div>'
         );
       }
+      
       school.clusters.forEach((cluster) => {
         const clusterCard = `
                 <div class="cluster-card-wrapper">
                     <div class="cluster-card" onclick="togglePrograms(${index})" style="background: ${cluster.gradient}">
-                        <div class="logo" style="background-image: url('${
-                          cluster.logo
-                        }');"></div>
+                        <div class="logo" style="background-image: url('${cluster.logo}');"></div>
                         <div class="content">
                             <h2>${cluster.name}</h2>
                             <p>${cluster.description}</p>
                         </div>
+                        
+                        <div class="chevron-icon">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        
                     </div>
                     <div class="programs" id="programs-${index}">
                         <ul>
@@ -59,19 +64,16 @@ fetch("data.json")
   })
   .catch((error) => console.error("Error loading JSON:", error));
 
+
 function togglePrograms(index) {
   const programDiv = document.getElementById(`programs-${index}`);
-  const icon = programDiv.previousElementSibling.querySelector(".fa");
-
+  
   if (programDiv) {
     programDiv.classList.toggle("show");
-
-    if (programDiv.classList.contains("show")) {
-      icon.classList.remove("fa-angle-double-down");
-      icon.classList.add("fa-angle-double-up");
-    } else {
-      icon.classList.remove("fa-angle-double-up");
-      icon.classList.add("fa-angle-double-down");
+    
+    const wrapper = programDiv.closest('.cluster-card-wrapper');
+    if (wrapper) {
+      wrapper.classList.toggle("open");
     }
   }
 }

@@ -3,7 +3,7 @@ li a i {
 }
 
 ul li a {
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -46,7 +46,7 @@ ul li a {
   font-family: "EB Garamond", sans-serif;
   font-style: italic;
   /* text-transfor */
-  font-size: 32px;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #c3a12a;
   margin: 0 0 25px 0;
@@ -54,7 +54,7 @@ ul li a {
 
 .school-title {
   font-family: "Open Sans", sans-serif;
-  font-size: 72px;
+  font-size: 4rem;
   font-weight: 700;
   color: rgb(47, 53, 144);
   margin: 0 0 30px 0;
@@ -62,7 +62,7 @@ ul li a {
 }
 
 .school-description {
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 400;
   color: #333333;
   line-height: 1.6;
@@ -111,7 +111,6 @@ ul li a {
 }
 
 .content {
-  /* border: 2px solid red; */
   margin-left: 40px;
   display: flex;
   flex-direction: column;
@@ -119,17 +118,15 @@ ul li a {
 }
 
 .content h2 {
-  /* border: 2px solid red; */
-  font-size: 28px;
+  font-size: 1.75rem;
   margin: 0px 0 10px 0;
   font-weight: 600;
   align-self: flex-start;
 }
 
 .content p {
-  /* border: 2px solid red; */
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5;
   margin: 0;
   font-weight: 300;
   text-align: justify;
@@ -158,114 +155,107 @@ ul li a {
 
 .programs li {
   margin-bottom: 10px;
-  font-size: 16px;
 }
 
-@media (max-width: 1199.98px) {
-  .container {
-    max-width: 920px;
-  }
+.chevron-icon {
+  margin-left: 1.2rem;
+  align-self: center;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.4s ease, color 0.3s ease;
+  /* padding-left: 20px; */
 }
 
-@media (max-width: 991.98px) {
-  ul li a {
-    font-size: 20px;
-    line-height: 1.5;
-  }
+.cluster-card:hover .chevron-icon {
+  color: #ffffff;
+}
 
+.cluster-card-wrapper.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1100px) {
   .container {
-    max-width: 620px;
+    padding-top: 3rem;
+    padding-bottom: 8rem;
   }
-
+  
   .school-header-container {
-    margin: 75px 0 0 0;
-    padding: 0;
+    padding: 20px 0;
   }
-
-  .divider-line {
-    display: none;
+  
+  .logo {
+    width: 120px;
+    height: 120px;
   }
+}
 
-  .school-prefix {
-    font-size: 16px;
-  }
-
-  .school-title {
-    font-size: 50px;
-    font-weight: 700;
-    vertical-align: bottom;
-    margin: 0;
-    padding: 0;
-  }
-
-  .school-description {
-    display: none;
+@media (max-width: 850px) {
+  .cluster-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 35px 25px;
   }
 
   .logo {
+    margin: 0 auto 25px auto;
     width: 100px;
     height: 100px;
   }
 
-  .cluster-card {
+  .content {
+    margin-left: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
   }
 
   .content h2 {
-    font-size: 44px;
+    align-self: center;
+    text-align: center;
   }
 
   .content p {
-    display: none;
-  }
-}
-
-@media (max-width: 767.98px) {
-  ul li a {
-    font-size: 18px;
-    line-height: 1.5;
-  }
-
-  .school-title,
-  .content h2 {
-    font-size: 32px;
+    text-align: center;
   }
 
   .programs.show {
-    padding: 25px;
+    padding: 30px 20px;
+  }
+  
+  .chevron-icon {
+    margin-left: 0;
+    margin-top: 25px;
+    align-self: center;
   }
 }
 
-@media (max-width: 575px) {
-  ul li a {
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
+@media (max-width: 650px) {
   .school-title {
-    font-size: 28px;
+    font-size: 2.8rem;
   }
-
+  
   .cluster-card-wrapper {
-    border-radius: 10px;
+    border-radius: 15px;
   }
-
+  
   .cluster-card {
-    padding: 15px 15px;
-    border-radius: 10px;
+    border-radius: 15px;
   }
+}
 
+@media (max-width: 480px) {
+  .school-title {
+    font-size: 2.2rem;
+  }
+  
   .logo {
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
   }
-
-  .content {
-    margin-left: 15px;
-  }
-
-  .content h2 {
-    font-size: 24px;
+  
+  .programs.show {
+    padding: 20px 15px;
   }
 }
