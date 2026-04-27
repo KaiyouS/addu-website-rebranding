@@ -1,8 +1,8 @@
-li a i {
+.programs a i {
   margin-left: 5px;
 }
 
-ul li a {
+.programs ul li a {
   font-size: 1rem;
   line-height: 1.5;
 }
